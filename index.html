@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ŚREṢṬHA Contest 2026 — A reading and knowledge contest on the life of Srila Prabhupada. Read. Reflect. Transform.">
+<link rel="canonical" href="https://sresthacontest.com/">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+
+<!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ŚREṢṬHA Contest 2026">
+<meta property="og:url" content="https://sresthacontest.com/">
+<meta property="og:title" content="ŚREṢṬHA Contest 2026">
+<meta property="og:description" content="Read. Reflect. Transform. Free contest by ISKCON Abids, Hyderabad.">
+<meta property="og:image" content="https://sresthacontest.com/images/logo.png">
+<meta property="og:image:alt" content="ŚREṢṬHA Contest — ISKCON Abids, Hyderabad">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ŚREṢṬHA Contest 2026">
+<meta name="twitter:description" content="Read. Reflect. Transform. Free contest by ISKCON Abids, Hyderabad.">
+<meta name="twitter:image" content="https://sresthacontest.com/images/logo.png">
+
+<title>ŚREṢṬHA Contest 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── SHARED brand tokens (never change with theme) ── */
+:root {
+  --saffron:      #F06A1B;
+  --saffron-dim:  #C45510;
+  --gold:         #D4A843;
+  --radius:       14px;
+  --radius-sm:    8px;
+  --radius-xs:    6px;
+}
+
+/* ── LIGHT MODE ── */
+:root {
+  --saffron-glow:   rgba(240,106,27,0.10);
+  --gold-light:     rgba(212,168,67,0.10);
+
+  --bg:             #FDFAF4;
+  --bg-2:           #F5EFE3;
+  --bg-3:           #EDE5D5;
+  --bg-4:           #E2D8C6;
+
+  --text:           #1A1208;
+  --text-muted:     #6B5340;
+
+  --border:         rgba(180,130,60,0.18);
+  --border-strong:  rgba(180,130,60,0.32);
+
+  --nav-bg:         rgba(253,250,244,0.94);
+  --nav-hover-bg:   rgba(0,0,0,0.04);
+
+  --card-bg:        #FFFFFF;
+  --card-bg-alt:    #F5EFE3;
+
+  --stat-bg:        #F0E8D8;
+  --section-alt-bg: #F5EFE3;
+
+  --faq-bg:         #FFFFFF;
+  --faq-hover-bg:   #FAF6EE;
+  --faq-label-bg:   rgba(240,106,27,0.06);
+
+  --footer-bg:      #1A1208;
+  --footer-text:    #F0E8D8;
+  --footer-muted:   #9A8A72;
+
+  --quote-bg:       rgba(240,106,27,0.07);
+
+  --placeholder-bg: #EDE5D5;
+  --code-color:     #C45510;
+
+  --step-bg:        #FFFFFF;
+  --gallery-bg:     #EDE5D5;
+
+  --prize-gradient: linear-gradient(160deg, rgba(212,168,67,0.10), #FFFFFF);
+
+  --cta-banner-bg:  #F0E8D8;
+  --contact-bg:     #FDFAF4;
+}
+
+/* ── DARK MODE ── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --saffron-glow:   rgba(240,106,27,0.18);
+    --gold-light:     rgba(212,168,67,0.12);
+
+    --bg:             #0E0A05;
+    --bg-2:           #1A1208;
+    --bg-3:           #231A0D;
+    --bg-4:           #2E2010;
+
+    --text:           #F0E8D8;
+    --text-muted:     #9A8A72;
+
+    --border:         rgba(212,168,67,0.15);
+    --border-strong:  rgba(212,168,67,0.28);
+
+    --nav-bg:         rgba(14,10,5,0.92);
+    --nav-hover-bg:   rgba(255,255,255,0.05);
+
+    --card-bg:        #231A0D;
+    --card-bg-alt:    #1A1208;
+
+    --stat-bg:        #1A1208;
+    --section-alt-bg: #1A1208;
+
+    --faq-bg:         #231A0D;
+    --faq-hover-bg:   #2E2010;
+    --faq-label-bg:   rgba(240,106,27,0.06);
+
+    --footer-bg:      #1A1208;
+    --footer-text:    #F0E8D8;
+    --footer-muted:   #9A8A72;
+
+    --quote-bg:       rgba(240,106,27,0.12);
+
+    --placeholder-bg: #2E2010;
+    --code-color:     #F06A1B;
+
+    --step-bg:        #231A0D;
+    --gallery-bg:     #231A0D;
+
+    --prize-gradient: linear-gradient(160deg, rgba(212,168,67,0.08), #231A0D);
+
+    --cta-banner-bg:  #231A0D;
+    --contact-bg:     #0E0A05;
+  }
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+/* ─── UTILITY ─── */
+.container { max-width: 1120px; margin: 0 auto; padding: 0 2rem; }
+.eyebrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-bottom: 1rem;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+.section-lead {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 560px;
+  line-height: 1.75;
+}
+.btn-primary {
+  display: inline-block;
+  background: var(--saffron);
+  color: #fff;
+  padding: 0.85rem 2.2rem;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: var(--saffron-dim); transform: translateY(-2px); }
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: var(--text);
+  padding: 0.85rem 2.2rem;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: 1px solid rgba(240,106,27,0.4);
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+}
+.btn-outline:hover { border-color: var(--saffron); background: var(--saffron-glow); transform: translateY(-2px); }
+
+/* ─── NAV ─── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--nav-bg);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1120px; margin: 0 auto; padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 66px; gap: 2rem;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none;
+}
+.nav-logo img {
+  width: 38px; height: 38px; object-fit: contain; border-radius: 6px;
+}
+.nav-logo-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem; font-weight: 600;
+  color: var(--text); letter-spacing: 0.02em;
+}
+.nav-links { display: flex; align-items: center; gap: 0.2rem; list-style: none; }
+.nav-links a {
+  display: block; padding: 0.4rem 0.9rem;
+  font-size: 0.85rem; font-weight: 500;
+  color: var(--text-muted); text-decoration: none;
+  border-radius: var(--radius-xs);
+  transition: color 0.15s, background 0.15s;
+}
+.nav-links a:hover { color: var(--text); background: var(--nav-hover-bg); }
+.nav-cta {
+  background: var(--saffron) !important; color: #fff !important;
+  padding: 0.45rem 1.2rem !important; border-radius: 100px !important;
+  font-weight: 700 !important;
+}
+.nav-cta:hover { background: var(--saffron-dim) !important; }
+
+.hamburger {
+  display: none; background: none; border: none; cursor: pointer;
+  padding: 8px; flex-direction: column; gap: 5px;
+}
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: 0.3s; }
+.mobile-menu {
+  display: none; flex-direction: column; padding: 1rem 2rem 1.5rem; gap: 0.25rem;
+  border-top: 1px solid var(--border);
+}
+.mobile-menu a {
+  padding: 0.7rem 0; font-size: 1rem; font-weight: 500;
+  color: var(--text-muted); text-decoration: none;
+  border-bottom: 1px solid var(--border);
+}
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover { color: var(--saffron); }
+.mobile-menu .m-cta {
+  background: var(--saffron); color: #fff !important;
+  text-align: center; border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem !important; font-weight: 700 !important;
+  border-bottom: none !important; margin-top: 0.5rem;
+}
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .mobile-menu.open { display: flex; }
+}
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 96vh;
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center; gap: 4rem;
+  padding: 6rem 2rem 5rem;
+  max-width: 1120px; margin: 0 auto;
+}
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; text-align: center; padding: 4rem 2rem 3rem; min-height: auto; }
+  .hero-visual { order: -1; }
+  .hero-actions { justify-content: center; }
+}
+.hero-kicker {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gold-light); border: 1px solid rgba(212,168,67,0.3);
+  padding: 0.35rem 1rem; border-radius: 100px;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+  color: var(--gold); text-transform: uppercase; margin-bottom: 1.5rem;
+}
+.hero-kicker::before { content: '✦'; font-size: 0.6rem; }
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 600; line-height: 1.08;
+  color: var(--text); margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+.hero h1 em { font-style: italic; color: var(--saffron); }
+.hero-sub-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem; font-style: italic;
+  color: var(--gold); margin-bottom: 1.25rem; letter-spacing: 0.04em;
+}
+.hero-desc {
+  font-size: 1rem; color: var(--text-muted);
+  max-width: 480px; line-height: 1.75; margin-bottom: 2.5rem;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+/* countdown */
+.cd-wrap { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.cd-unit { text-align: center; }
+.cd-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem; font-weight: 600; line-height: 1;
+  color: var(--saffron); min-width: 2ch;
+}
+.cd-lbl {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--text-muted); margin-top: 2px;
+}
+.cd-sep { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: var(--border); align-self: flex-start; margin-top: 4px; }
+.cd-note { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.5rem; }
+/* hero image panel */
+.hero-visual {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  max-height: 580px;
+}
+.hero-visual img {
+  width: 100%; height: 100%; object-fit: cover;
+  display: block;
+}
+.hero-img-placeholder {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 1rem; padding: 2rem; text-align: center;
+}
+.hero-img-placeholder .om { font-size: 5rem; opacity: 0.12; line-height: 1; }
+.hero-img-placeholder p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
+.hero-visual .hero-badge {
+  position: absolute; bottom: 1.25rem; left: 1.25rem; right: 1.25rem;
+  background: var(--nav-bg); backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.hero-badge .iskcon-logo { width: 32px; height: 32px; border-radius: 4px; object-fit: contain; flex-shrink: 0; }
+.hero-badge .iskcon-logo-placeholder { width: 32px; height: 32px; border-radius: 4px; background: var(--placeholder-bg); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; color: var(--text-muted); text-align: center; }
+.hero-badge p { font-size: 0.8rem; font-weight: 500; color: var(--text); line-height: 1.3; }
+.hero-badge span { font-size: 0.72rem; color: var(--text-muted); }
+
+/* ─── STAT STRIP ─── */
+.stat-strip {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--card-bg-alt);
+  padding: 2.5rem 0;
+}
+.stat-strip .inner {
+  max-width: 1120px; margin: 0 auto; padding: 0 2rem;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem; text-align: center;
+}
+.stat-item .num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem; font-weight: 600; color: var(--saffron); line-height: 1;
+}
+.stat-item .lbl { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.3rem; }
+
+/* ─── SECTIONS ─── */
+section { padding: 6rem 0; }
+/* section-light uses bg-2 */
+/* light section title */
+/* light section lead */
+/* light eyebrow */
+.section-alt { background: var(--card-bg-alt); }
+
+/* ─── WHAT IS ─── */
+.what-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem; margin-top: 3rem;
+}
+.what-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  transition: border-color 0.2s;
+}
+.what-card:hover { border-color: rgba(240,106,27,0.4); }
+.what-card .ic {
+  width: 48px; height: 48px;
+  background: var(--saffron-glow);
+  border: 1px solid rgba(240,106,27,0.25);
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; margin-bottom: 1.1rem;
+}
+.what-card h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+.what-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; }
+
+/* ─── STEPS ─── */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 3rem;
+}
+.step-card {
+  background: var(--card-bg);
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+.step-num {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: var(--saffron-glow);
+  border: 1.5px solid var(--saffron);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem; font-weight: 600; color: var(--saffron);
+}
+.step-card h3 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+.step-card p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; }
+.step-link {
+  display: inline-block; margin-top: 0.75rem;
+  font-size: 0.8rem; font-weight: 600;
+  color: var(--saffron); text-decoration: none;
+  border-bottom: 1px solid rgba(240,106,27,0.3);
+}
+
+/* ─── STUDY MATERIAL ─── */
+.groups-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+@media (max-width: 600px) { .groups-grid { grid-template-columns: 1fr; } }
+.group-card {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 2rem; overflow: hidden; position: relative;
+}
+.group-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+}
+.group-card.junior::before { background: var(--gold); }
+.group-card.senior::before { background: var(--saffron); }
+.group-tag {
+  display: inline-block; font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.25rem 0.8rem; border-radius: 100px; margin-bottom: 1rem;
+}
+.junior .group-tag { background: var(--gold-light); color: var(--gold); border: 1px solid rgba(212,168,67,0.3); }
+.senior .group-tag { background: var(--saffron-glow); color: var(--saffron); border: 1px solid rgba(240,106,27,0.3); }
+.group-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--text); margin-bottom: 0.25rem; }
+.group-card .age { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+/* booklet cards */
+.booklet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.booklet-card {
+  background: var(--card-bg-alt); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); overflow: hidden;
+  text-decoration: none; transition: border-color 0.2s;
+  display: flex; flex-direction: column;
+}
+.booklet-card:hover { border-color: rgba(240,106,27,0.5); }
+.booklet-thumb {
+  width: 100%; aspect-ratio: 3/4;
+  background: var(--placeholder-bg);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.booklet-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.booklet-thumb .bk-placeholder { font-size: 2rem; opacity: 0.2; }
+.booklet-footer {
+  padding: 0.6rem 0.75rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.booklet-footer span { font-size: 0.78rem; font-weight: 600; color: var(--text); }
+.booklet-footer .dl-icon { font-size: 0.9rem; color: var(--saffron); }
+
+/* ─── PRIZES ─── */
+.prizes-header-row {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap;
+}
+.prize-tabs {
+  display: flex; gap: 0.35rem;
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 100px; padding: 0.3rem;
+}
+.ptab {
+  padding: 0.4rem 1.2rem; border-radius: 100px;
+  font-size: 0.82rem; font-weight: 600; border: none;
+  background: transparent; color: var(--text-muted); cursor: pointer;
+  transition: all 0.2s;
+}
+.ptab.active { background: var(--saffron); color: #fff; }
+.prizes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+@media (max-width: 600px) { .prizes-grid { grid-template-columns: 1fr; } }
+.prize-card {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden;
+  text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.prize-card:hover { border-color: rgba(240,106,27,0.4); transform: translateY(-3px); }
+.prize-card.gold-card { border-color: rgba(212,168,67,0.35); background: var(--prize-gradient); }
+.prize-img-wrap {
+  width: 100%; aspect-ratio: 4/3; background: var(--placeholder-bg);
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.prize-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.prize-img-wrap .prize-emoji { font-size: 3rem; opacity: 0.35; }
+.prize-body { padding: 1.25rem; }
+.prize-medal { font-size: 1.6rem; margin-bottom: 0.4rem; }
+.prize-rank { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
+.prize-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--text); }
+.consolation { text-align: center; margin-top: 1.75rem; font-size: 0.88rem; color: var(--text-muted); font-style: italic; }
+
+/* ─── ABOUT ─── */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+@media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; gap: 3rem; } }
+.about-photo {
+  position: relative; border-radius: 20px; overflow: hidden;
+  aspect-ratio: 3/4; max-height: 520px;
+  background: var(--card-bg); border: 1px solid var(--border);
+}
+.about-photo img { width: 100%; height: 100%; object-fit: cover; }
+.about-photo .photo-placeholder {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 1rem; text-align: center; padding: 2rem;
+}
+.about-photo .photo-placeholder .big-om { font-size: 8rem; opacity: 0.07; line-height: 1; }
+.about-photo .photo-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.75));
+  padding: 2rem 1.25rem 1.25rem;
+  font-size: 0.82rem; color: rgba(255,255,255,0.75);
+  font-style: italic;
+}
+.about-content h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 3.5vw, 2.6rem); font-weight: 600; color: var(--text); line-height: 1.2; margin-bottom: 1.25rem; }
+.about-content p { font-size: 0.975rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.75; }
+.quote-block {
+  border-left: 2.5px solid var(--saffron);
+  padding: 1rem 1.25rem;
+  margin: 1.75rem 0;
+  background: var(--saffron-glow);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.quote-block blockquote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; color: var(--text); line-height: 1.5; }
+.quote-block cite { display: block; font-size: 0.78rem; font-weight: 600; color: var(--text-muted); margin-top: 0.5rem; font-style: normal; }
+.values-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+.vpill {
+  padding: 0.35rem 1rem; border-radius: 100px;
+  font-size: 0.78rem; font-weight: 600;
+  background: var(--card-bg); border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+/* ─── GALLERY ─── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; margin-top: 3rem;
+}
+@media (max-width: 700px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+.gallery-item {
+  border-radius: var(--radius-sm); overflow: hidden;
+  background: var(--card-bg); border: 1px solid var(--border);
+  aspect-ratio: 4/3; position: relative;
+}
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.35s; }
+.gallery-item:hover img { transform: scale(1.04); }
+.gallery-item .g-placeholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem; color: var(--text-muted); text-align: center; padding: 1rem;
+}
+.gallery-item.tall { grid-row: span 2; aspect-ratio: auto; }
+
+/* ─── SCHEDULE ─── */
+.timeline { margin-top: 2.5rem; position: relative; padding-left: 2rem; }
+.timeline::before {
+  content: ''; position: absolute; left: 0.4rem; top: 0.3rem; bottom: 0.3rem;
+  width: 1.5px; background: var(--border);
+}
+.tl-item { position: relative; padding: 0 0 2.25rem 1.75rem; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-dot {
+  position: absolute; left: -1.6rem; top: 0.3rem;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--placeholder-bg); border: 2px solid var(--border-strong);
+}
+.tl-dot.active { background: var(--saffron); border-color: var(--saffron); box-shadow: 0 0 0 3px var(--saffron-glow); }
+.tl-dot.done { background: var(--gold); border-color: var(--gold); }
+.tl-date { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--saffron); margin-bottom: 0.25rem; }
+.tl-item h3 { font-weight: 600; font-size: 1rem; color: var(--text); margin-bottom: 0.2rem; }
+.tl-item p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; }
+
+/* ─── FAQ ─── */
+.faq-list { margin-top: 2.5rem; border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; }
+.faq-section-label {
+  padding: 0.75rem 1.5rem; font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--saffron); background: rgba(240,106,27,0.06);
+  border-bottom: 1px solid var(--border);
+}
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:last-child { border-bottom: none; }
+.faq-q {
+  width: 100%; background: var(--card-bg); border: none;
+  padding: 1.15rem 1.5rem; text-align: left;
+  font-family: 'Inter', sans-serif; font-size: 0.925rem; font-weight: 500;
+  color: var(--text); cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  transition: background 0.15s;
+}
+.faq-q:hover { background: var(--placeholder-bg); }
+.faq-q .arr { flex-shrink: 0; color: var(--saffron); font-size: 0.9rem; transition: transform 0.25s; }
+.faq-item.open .faq-q .arr { transform: rotate(180deg); }
+.faq-a { display: none; padding: 0 1.5rem 1.15rem; font-size: 0.875rem; color: var(--text-muted); line-height: 1.75; background: var(--card-bg); }
+.faq-a a { color: var(--saffron); }
+.faq-a ol, .faq-a ul { margin: 0.5rem 0 0 1.2rem; }
+.faq-a li { margin-bottom: 0.3rem; }
+.faq-item.open .faq-a { display: block; }
+
+/* ─── CONTACT ─── */
+.contact-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 3rem; }
+.contact-card {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.75rem; text-align: center;
+  transition: border-color 0.2s;
+}
+.contact-card:hover { border-color: rgba(240,106,27,0.35); }
+.contact-card .cicon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+.contact-card h3 { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); margin-bottom: 0.4rem; }
+.contact-card a, .contact-card p { font-size: 0.9rem; font-weight: 500; color: var(--text); text-decoration: none; word-break: break-all; }
+.contact-card a:hover { color: var(--saffron); }
+.contact-hours { text-align: center; font-size: 0.82rem; color: var(--text-muted); margin-top: 1.75rem; }
+.cta-banner {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px; padding: 4rem 3rem;
+  text-align: center; margin-top: 5rem;
+}
+.cta-banner h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 600; color: var(--text); margin-bottom: 0.75rem; }
+.cta-banner p { font-size: 1rem; color: var(--text-muted); margin-bottom: 2rem; }
+.cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--footer-bg);
+  border-top: 1px solid rgba(212,168,67,0.15);
+  padding: 3rem 2rem; text-align: center;
+}
+.footer-logo { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 0.75rem; }
+.footer-logo img { width: 36px; height: 36px; object-fit: contain; border-radius: 6px; }
+.footer-logo .fl-placeholder { width: 36px; height: 36px; border-radius: 6px; background: #2E2010; display: inline-block; }
+.footer-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--footer-text); }
+footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
+.footer-hk { font-style: italic; color: var(--gold); font-size: 0.95rem; margin: 0.5rem 0; }
+.footer-copy { font-size: 0.75rem; opacity: 0.4; margin-top: 0.5rem; }
+</style>
+
+<!-- Structured data — helps Google show the contest as an event -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationEvent",
+  "name": "ŚREṢṬHA Contest 2026",
+  "description": "A free reading and knowledge contest based on the life and teachings of His Divine Grace A.C. Bhaktivedanta Swami Srila Prabhupada. Open to ages 8 and above, in English and Telugu.",
+  "url": "https://sresthacontest.com/",
+  "image": "https://sresthacontest.com/images/logo.png",
+  "startDate": "2026-07-26",
+  "endDate": "2026-07-30",
+  "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "inLanguage": ["en", "te"],
+  "location": {
+    "@type": "VirtualLocation",
+    "url": "https://sresthacontest.com/"
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "ISKCON Abids, Hyderabad",
+    "url": "https://iskconhyderabad.com/"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR",
+    "availability": "https://schema.org/InStock",
+    "validThrough": "2026-07-25",
+    "url": "https://forms.gle/7n8rGLdmuz2VHsPf7"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="images/logo.png" alt="ŚREṢṬHA Contest" width="38" height="38" onerror="imgFallback(this)" />
+      <div style="width:38px;height:38px;border-radius:8px;background:var(--saffron-glow);border:1px solid rgba(240,106,27,0.3);display:none;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">ॐ</div>
+      <span class="nav-logo-text">ŚREṢṬHA Contest</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#material">Study Material</a></li>
+      <li><a href="#prizes">Prizes</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#faqs">FAQs</a></li>
+      <li><a href="https://forms.gle/7n8rGLdmuz2VHsPf7" target="_blank" class="nav-cta">Register Free →</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#material" onclick="closeMobile()">Study Material</a>
+    <a href="#prizes" onclick="closeMobile()">Prizes</a>
+    <a href="#schedule" onclick="closeMobile()">Schedule</a>
+    <a href="#faqs" onclick="closeMobile()">FAQs</a>
+    <a href="https://forms.gle/7n8rGLdmuz2VHsPf7" target="_blank" class="m-cta">Register Free →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero container" style="max-width:1120px;margin:0 auto;">
+  <div class="hero-content">
+    <div class="hero-kicker">ISKCON Abids, Hyderabad · 2026</div>
+    <h1>Welcome to<br><em>ŚREṢṬHA</em><br>Contest</h1>
+    <p class="hero-sub-title">Read. Reflect. Transform.</p>
+    <p class="hero-desc">A free reading and knowledge contest based on the life and teachings of His Divine Grace A.C. Bhaktivedanta Swami Srila Prabhupada. One person can change the world — discover your potential.</p>
+    <div class="hero-actions">
+      <a href="https://forms.gle/7n8rGLdmuz2VHsPf7" target="_blank" class="btn-primary">Register Free →</a>
+      <a href="#about" class="btn-outline">Learn More</a>
+    </div>
+    <div class="cd-wrap" id="countdown"></div>
+    <p class="cd-note" style="margin-top:0.6rem;">Registration closes · 25 July 2026</p>
+  </div>
+
+  <div class="hero-visual">
+    <img src="images/hero-prabhupada.jpg" alt="Srila Prabhupada" width="480" height="600" fetchpriority="high" onerror="imgFallback(this)" />
+    <div class="hero-img-placeholder" style="display:none;">
+      <div class="om">ॐ</div>
+      <p style="color:var(--text-muted);font-size:0.82rem;">
+        Add your hero image:<br>
+        <code style="font-size:0.75rem;color:var(--saffron);">images/hero-prabhupada.jpg</code>
+      </p>
+    </div>
+    <div class="hero-badge">
+      <img src="images/logo.png" alt="ISKCON" class="iskcon-logo" width="32" height="32" onerror="imgFallback(this)" />
+      <div class="iskcon-logo-placeholder" style="display:none;">ॐ</div>
+      <div>
+        <p>ISKCON Abids, Hyderabad</p>
+        <span>An initiative by ISKCON Temple</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STAT STRIP -->
+<div class="stat-strip">
+  <div class="inner">
+    <div class="stat-item"><div class="num">Free</div><div class="lbl">Registration for all participants</div></div>
+    <div class="stat-item"><div class="num">2</div><div class="lbl">Age groups — 8–16 yrs & 17+</div></div>
+    <div class="stat-item"><div class="num">2</div><div class="lbl">Languages — English & Telugu</div></div>
+    <div class="stat-item"><div class="num">15 Aug</div><div class="lbl">Results on Independence Day</div></div>
+  </div>
+</div>
+
+<!-- WHAT IS -->
+<section>
+  <div class="container">
+    <p class="eyebrow">What is it</p>
+    <h2 class="section-title">A contest that builds<br>character, not just scores</h2>
+    <p class="section-lead">Participants receive a specially designed booklet, read an inspiring true-life story, and then sit for a knowledge assessment — all for free.</p>
+    <div class="what-grid">
+      <div class="what-card">
+        <div class="ic">📖</div>
+        <h3>Read an inspiring story</h3>
+        <p>Get a specially designed booklet in English or Telugu and explore one of modern history's most remarkable journeys.</p>
+      </div>
+      <div class="what-card">
+        <div class="ic">💡</div>
+        <h3>Develop life skills & values</h3>
+        <p>Timeless principles of character, leadership, resilience, self-discipline, and spiritual wisdom.</p>
+      </div>
+      <div class="what-card">
+        <div class="ic">✍️</div>
+        <h3>Write an online exam</h3>
+        <p>MCQ-based, open-book, 1-hour assessment. Available online from 26–30 July 2026.</p>
+      </div>
+      <div class="what-card">
+        <div class="ic">🏆</div>
+        <h3>Win prizes & recognition</h3>
+        <p>Top winners take home exciting prizes. Every participant receives an e-certificate and LinkedIn recognition.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section-alt" style="padding-top:0;padding-bottom:5rem;">
+  <div class="container">
+    <p class="eyebrow">How it works</p>
+    <h2 class="section-title">Four simple steps</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Register</h3>
+        <p>Free registration for Group 1 (8–16 yrs) or Group 2 (17+)</p>
+        <a href="https://forms.gle/7n8rGLdmuz2VHsPf7" target="_blank" class="step-link">Register now →</a>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Download Booklet</h3>
+        <p>Get the study material in English or Telugu from this website</p>
+        <a href="#material" class="step-link">Get booklet →</a>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Write the Exam</h3>
+        <p>Online MCQ, 26–30 July 2026. Open book, 1 hour, negative marking</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h3>Win Prizes</h3>
+        <p>Results & felicitation on 15 August 2026 — Independence Day!</p>
+        <a href="#prizes" class="step-link">See prizes →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDY MATERIAL -->
+<section id="material">
+  <div class="container">
+    <p class="eyebrow">Study Material</p>
+    <h2 class="section-title">Download your booklet</h2>
+    <p class="section-lead">Choose the right booklet for your age group. Available in English and Telugu, completely free.</p>
+    <div class="groups-grid">
+
+      <div class="group-card junior">
+        <span class="group-tag">Group 1</span>
+        <h3>Junior Group</h3>
+        <p class="age">Ages 8 to 16 years</p>
+        <div class="booklet-grid">
+          <a href="https://drive.google.com/file/d/1ddBmYTkuw-dBDZXOCZEjJbPx4IKS5uNA/view?usp=drive_link" target="_blank" class="booklet-card">
+            <div class="booklet-thumb">
+              <!--
+                BOOKLET COVER — Replace with:
+                <img src="images/booklet-junior-eng.jpg" alt="Junior Booklet English" width="300" height="400" loading="lazy" />
+              -->
+              <span class="bk-placeholder">📚</span>
+            </div>
+            <div class="booklet-footer">
+              <span>English</span>
+              <span class="dl-icon">↓</span>
+            </div>
+          </a>
+          <a href="https://drive.google.com/file/d/1ddBmYTkuw-dBDZXOCZEjJbPx4IKS5uNA/view?usp=drive_link" target="_blank" class="booklet-card">
+            <div class="booklet-thumb">
+              <!--
+                <img src="images/booklet-junior-tel.jpg" alt="Junior Booklet Telugu" width="300" height="400" loading="lazy" />
+              -->
+              <span class="bk-placeholder">📚</span>
+            </div>
+            <div class="booklet-footer">
+              <span>Telugu</span>
+              <span class="dl-icon">↓</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="group-card senior">
+        <span class="group-tag">Group 2</span>
+        <h3>Senior Group</h3>
+        <p class="age">Ages 17 and above</p>
+        <div class="booklet-grid">
+          <a href="https://drive.google.com/file/d/1TIIqx_rvgUplohRhQFT7_z8ARosJC3SJ/view?usp=drive_link" target="_blank" class="booklet-card">
+            <div class="booklet-thumb">
+              <!--
+                <img src="images/booklet-senior-eng.jpg" alt="Senior Booklet English" width="300" height="400" loading="lazy" />
+              -->
+              <span class="bk-placeholder">📚</span>
+            </div>
+            <div class="booklet-footer">
+              <span>English</span>
+              <span class="dl-icon">↓</span>
+            </div>
+          </a>
+          <a href="https://drive.google.com/file/d/17RdGyioFjYVrf_7mTVkdJ4aEzKpFc1Pi/view?usp=drive_link" target="_blank" class="booklet-card">
+            <div class="booklet-thumb">
+              <!--
+                <img src="images/booklet-senior-tel.jpg" alt="Senior Booklet Telugu" width="300" height="400" loading="lazy" />
+              -->
+              <span class="bk-placeholder">📚</span>
+            </div>
+            <div class="booklet-footer">
+              <span>Telugu</span>
+              <span class="dl-icon">↓</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRIZES -->
+<section id="prizes" class="section-alt">
+  <div class="container">
+    <div class="prizes-header-row">
+      <div>
+        <p class="eyebrow">Prizes</p>
+        <h2 class="section-title" style="margin-bottom:0;">Exceptional rewards<br>for exceptional readers</h2>
+      </div>
+      <div class="prize-tabs">
+        <button class="ptab active" onclick="showPrizes('junior',this)">Junior (8–16)</button>
+        <button class="ptab" onclick="showPrizes('senior',this)">Senior (17+)</button>
+      </div>
+    </div>
+
+    <div id="prizes-junior" class="prizes-grid">
+      <div class="prize-card gold-card">
+        <div class="prize-img-wrap">
+          <img src="images/prize-electric-cycle.jpg" alt="1st Prize: Electric Cycle" width="400" height="300" loading="lazy" onerror="imgFallback(this)" />
+          <span class="prize-emoji" style="display:none;">⚡🚲</span>
+        </div>
+        <div class="prize-body">
+          <div class="prize-medal">🥇</div>
+          <div class="prize-rank">1st Prize</div>
+          <div class="prize-name">Electric Cycle</div>
+        </div>
+      </div>
+      <div class="prize-card">
+        <div class="prize-img-wrap">
+          <img src="images/prize-gear-cycle.jpg" alt="2nd Prize: Gear Cycle" width="400" height="300" loading="lazy" onerror="imgFallback(this)" />
+          <span class="prize-emoji" style="display:none;">🚲</span>
+        </div>
+        <div class="prize-body">
+          <div class="prize-medal">🥈</div>
+          <div class="prize-rank">2nd Prize</div>
+          <div class="prize-name">Gear Cycle</div>
+        </div>
+      </div>
+      <div class="prize-card">
+        <div class="prize-img-wrap">
+          <img src="images/prize-cycle.jpg" alt="3rd Prize: Cycle" width="400" height="300" loading="lazy" onerror="imgFallback(this)" />
+          <span class="prize-emoji" style="display:none;">🚲</span>
+        </div>
+        <div class="prize-body">
+          <div class="prize-medal">🥉</div>
+          <div class="prize-rank">3rd Prize</div>
+          <div class="prize-name">Cycle</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="prizes-senior" class="prizes-grid" style="display:none;">
+      <div class="prize-card gold-card">
+        <div class="prize-img-wrap">
+          <img src="images/prize-scooter.jpg" alt="1st Prize: Electric Scooter" width="400" height="300" loading="lazy" onerror="imgFallback(this)" />
+          <span class="prize-emoji" style="display:none;">⚡🛵</span>
+        </div>
+        <div class="prize-body">
+          <div class="prize-medal">🥇</div>
+          <div class="prize-rank">1st Prize</div>
+          <div class="prize-name">Electric Scooter</div>
+        </div>
+      </div>
+      <div class="prize-card">
+        <div class="prize-img-wrap">
+          <img src="images/prize-laptop.jpg" alt="2nd Prize: Laptop" width="400" height="300" loading="lazy" onerror="imgFallback(this)" />
+          <span class="prize-emoji" style="display:none;">💻</span>
+        </div>
+        <div class="prize-body">
+          <div class="prize-medal">🥈</div>
+          <div class="prize-rank">2nd Prize</div>
+          <div class="prize-name">Laptop</div>
+        </div>
+      </div>
+      <div class="prize-card">
+        <div class="prize-img-wrap">
+          <img src="images/prize-tablet.jpg" alt="3rd Prize: Tablet" width="400" height="300" loading="lazy" onerror="imgFallback(this)" />
+          <span class="prize-emoji" style="display:none;">📱</span>
+        </div>
+        <div class="prize-body">
+          <div class="prize-medal">🥉</div>
+          <div class="prize-rank">3rd Prize</div>
+          <div class="prize-name">Tablet</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="consolation">+ Many consolation prizes for participants across both groups</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="images/srila-prabhupada.jpg" alt="His Divine Grace Srila Prabhupada" width="450" height="600" loading="lazy" onerror="imgFallback(this)" />
+        <div class="photo-placeholder" style="display:none;">
+          <div class="big-om">ॐ</div>
+          <p style="font-size:0.82rem;color:var(--text-muted);">
+            Add photo:<br>
+            <code style="font-size:0.75rem;color:var(--saffron);">images/srila-prabhupada.jpg</code>
+          </p>
+        </div>
+        <div class="photo-caption">His Divine Grace A.C. Bhaktivedanta Swami Srila Prabhupada</div>
+      </div>
+      <div class="about-content">
+        <p class="eyebrow">About the Contest</p>
+        <h2>Inspired by a life that changed the world</h2>
+        <p>Sreshta Contest is a value-based educational initiative by ISKCON Abids, Hyderabad, inspired by the life and teachings of His Divine Grace Srila Prabhupada — the founder-acharya of ISKCON.</p>
+        <p>At the age of 69, with almost no money and no institutional support, Srila Prabhupada journeyed alone from India to America. What happened next became one of the most remarkable success stories of modern times.</p>
+        <div class="quote-block">
+          <blockquote>"Whatever action a great person performs, common people follow."</blockquote>
+          <cite>— Bhagavad-gita 3.21</cite>
+        </div>
+        <p>Through determination, wisdom, compassion, and unwavering faith, he inspired millions of people and established a global movement dedicated to spiritual wisdom, character building, and service to humanity.</p>
+        <div class="values-pills">
+          <span class="vpill">Character</span>
+          <span class="vpill">Leadership</span>
+          <span class="vpill">Resilience</span>
+          <span class="vpill">Self-Discipline</span>
+          <span class="vpill">Spiritual Wisdom</span>
+          <span class="vpill">Purpose</span>
+        </div>
+        <p style="margin-top:1.5rem;">
+          <a href="https://iskconhyderabad.com/srila-prabhupada-in-hyderabad/" target="_blank" style="color:var(--saffron);font-size:0.88rem;font-weight:600;text-decoration:none;">
+            Learn more at ISKCON Hyderabad ↗
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section-alt" id="gallery">
+  <div class="container">
+    <p class="eyebrow">Gallery</p>
+    <h2 class="section-title">Moments from the contest</h2>
+    <p class="section-lead">Photos from ceremonies, events, and participants across the contest.</p>
+    <div class="gallery-grid">
+      <!--
+        GALLERY IMAGES — Replace each placeholder with:
+        <img src="images/gallery-1.jpg" alt="Award ceremony" width="600" height="450" loading="lazy" />
+        Recommended: 6 photos, landscape orientation (4:3), min 600px wide
+        For a tall/featured image, add class="tall" to .gallery-item
+      -->
+      <div class="gallery-item tall">
+        <div class="g-placeholder">📸<br><br><code style="font-size:0.7rem;color:var(--saffron);">images/gallery-1.jpg</code><br><span style="font-size:0.7rem;">Featured photo (tall)</span></div>
+      </div>
+      <div class="gallery-item"><div class="g-placeholder">📸<br><code style="font-size:0.7rem;color:var(--saffron);">images/gallery-2.jpg</code></div></div>
+      <div class="gallery-item"><div class="g-placeholder">📸<br><code style="font-size:0.7rem;color:var(--saffron);">images/gallery-3.jpg</code></div></div>
+      <div class="gallery-item"><div class="g-placeholder">📸<br><code style="font-size:0.7rem;color:var(--saffron);">images/gallery-4.jpg</code></div></div>
+      <div class="gallery-item"><div class="g-placeholder">📸<br><code style="font-size:0.7rem;color:var(--saffron);">images/gallery-5.jpg</code></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule">
+  <div class="container">
+    <p class="eyebrow">Schedule</p>
+    <h2 class="section-title">Key dates for 2026</h2>
+    <p class="section-lead">All dates for Sreshta Contest 2026. Mark your calendar.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot active"></div>
+        <div class="tl-date">Now Open</div>
+        <h3>Registration Open</h3>
+        <p>Free registration for Group 1 (8–16 yrs) and Group 2 (17+). Register via the Google Form.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">25 July 2026</div>
+        <h3>Registration Closes</h3>
+        <p>Last date to register. Completely free — no fees for any participant.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">26 – 30 July 2026</div>
+        <h3>Online Examination</h3>
+        <p>MCQ-based open-book exam, 1 hour duration. Available in English and Telugu. Negative marking applies.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">15 August 2026</div>
+        <h3>Felicitation Ceremony & Results</h3>
+        <p>Winners announced on Independence Day. Further exams and interviews for top scorers communicated on this date.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">By 30 November 2026</div>
+        <h3>Names Published & Certificates Sent</h3>
+        <p>All winner names updated on the website. E-certificates sent to all participants' registered email addresses.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faqs" class="section-alt">
+  <div class="container">
+    <p class="eyebrow">FAQs</p>
+    <h2 class="section-title">Common questions</h2>
+    <div class="faq-list">
+      <div class="faq-section-label">Registration</div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Who can register for Sreshta Contest 2026? <span class="arr">▾</span></button>
+        <div class="faq-a">We have two groups — ages 8 to 16, and 17 and above. Students from any school across the world can participate.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">How do I register? <span class="arr">▾</span></button>
+        <div class="faq-a">
+          <ol>
+            <li>Visit <strong>sresthacontest.com</strong></li>
+            <li>Click <a href="https://forms.gle/7n8rGLdmuz2VHsPf7" target="_blank">Register Now</a> and choose your group</li>
+            <li>Fill in all details — ensure email and phone number are correct</li>
+            <li>Click Submit — you're registered!</li>
+          </ol>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">What is the last date of registration? <span class="arr">▾</span></button>
+        <div class="faq-a">The last date of registration is 25th July 2026.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">What is the registration fee? <span class="arr">▾</span></button>
+        <div class="faq-a">Registration is completely free of cost for all participants.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">What languages are available? <span class="arr">▾</span></button>
+        <div class="faq-a">The exam and study material are available in English and Telugu.</div>
+      </div>
+      <div class="faq-section-label">Study Material</div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">What will be the material for the exam? <span class="arr">▾</span></button>
+        <div class="faq-a">Read the booklet provided on this website. Download it from the <a href="#material">Study Material</a> section according to your age group. The exam is entirely based on this booklet.</div>
+      </div>
+      <div class="faq-section-label">Exam</div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">When is the exam? <span class="arr">▾</span></button>
+        <div class="faq-a">The exam will be conducted on any day between 26th and 30th July 2026.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Is the exam open-book or closed-book? <span class="arr">▾</span></button>
+        <div class="faq-a">Open book — but students should read the material thoroughly to answer well in the time limit.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Where is the exam held? <span class="arr">▾</span></button>
+        <div class="faq-a">The exam is conducted entirely online.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">What is the exam format and duration? <span class="arr">▾</span></button>
+        <div class="faq-a">Multiple Choice Questions (MCQ). Duration is 1 hour. Negative marking applies.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Is there negative marking? <span class="arr">▾</span></button>
+        <div class="faq-a">Yes, there will be negative marking — read carefully before selecting your answer.</div>
+      </div>
+      <div class="faq-section-label">Results & Certificates</div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">When will the results be announced? <span class="arr">▾</span></button>
+        <div class="faq-a">Winners will be announced on 15th August 2026 at the Felicitation Ceremony. Names will be updated on the website by 30th November. Individual marks will not be shown or shared.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Will every participant receive a certificate? <span class="arr">▾</span></button>
+        <div class="faq-a">Yes! An e-certificate will be sent to your registered email address after completing the final examination.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Can I add this to my LinkedIn profile? <span class="arr">▾</span></button>
+        <div class="faq-a">Absolutely — you can add your participation and certificate to your LinkedIn profile.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="eyebrow">Contact</p>
+    <h2 class="section-title">We're here to help</h2>
+    <p class="section-lead">Available every day of the week. Reach out with any questions about registration, the exam, or prizes.</p>
+    <div class="contact-row">
+      <div class="contact-card">
+        <div class="cicon">📧</div>
+        <h3>Email</h3>
+        <a href="mailto:sreshtacontest@gmail.com">sreshtacontest@gmail.com</a>
+      </div>
+      <div class="contact-card">
+        <div class="cicon">💬</div>
+        <h3>WhatsApp — Contest Queries</h3>
+        <a href="https://wa.me/918407919095" target="_blank">+91 84079 19095</a>
+      </div>
+      <div class="contact-card">
+        <div class="cicon">💬</div>
+        <h3>WhatsApp — General Queries</h3>
+        <a href="https://wa.me/919548237660" target="_blank">+91 95482 37660</a>
+      </div>
+    </div>
+    <p class="contact-hours">Available Monday to Sunday · 10:00 AM – 7:00 PM</p>
+
+    <div class="cta-banner">
+      <h2>Ready to join the contest?</h2>
+      <p>Registration is free. Download the booklet, read the story, and discover your potential.</p>
+      <div class="cta-actions">
+        <a href="https://forms.gle/7n8rGLdmuz2VHsPf7" target="_blank" class="btn-primary">Register Free →</a>
+        <a href="#material" class="btn-outline">Download Booklet</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="images/logo.png" alt="Sreshtha Contest" width="36" height="36" loading="lazy" onerror="imgFallback(this)" />
+    <div class="fl-placeholder" style="display:none;align-items:center;justify-content:center;font-size:1rem;">ॐ</div>
+    <span class="footer-logo-text">ŚREṢṬHA Contest 2026</span>
+  </div>
+  <p>An initiative by ISKCON Abids, Hyderabad</p>
+  <p class="footer-hk">Hare Krishna 🙏</p>
+  <p class="footer-copy">© 2026 Srestha Contest. All rights reserved.</p>
+</footer>
+
+<script>
+// Image fallback — hide the broken image and reveal its placeholder sibling
+function imgFallback(img) {
+  img.style.display = 'none';
+  const ph = img.nextElementSibling;
+  if (ph) ph.style.display = 'flex';
+}
+
+// Mobile nav
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+});
+function closeMobile() {
+  mobileMenu.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  hamburger.setAttribute('aria-label', 'Open menu');
+}
+
+// Live countdown to July 25, 2026
+function updateCountdown() {
+  const target = new Date('2026-07-25T23:59:59+05:30');
+  const now = new Date();
+  const diff = target - now;
+  if (diff <= 0) {
+    document.getElementById('countdown').innerHTML = '<p style="font-size:0.85rem;color:var(--text-muted)">Registration is now closed.</p>';
+    return;
+  }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('countdown').innerHTML = `
+    <div class="cd-unit"><div class="cd-num">${String(d).padStart(2,'0')}</div><div class="cd-lbl">Days</div></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><div class="cd-num">${String(h).padStart(2,'0')}</div><div class="cd-lbl">Hours</div></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><div class="cd-num">${String(m).padStart(2,'0')}</div><div class="cd-lbl">Mins</div></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><div class="cd-num">${String(s).padStart(2,'0')}</div><div class="cd-lbl">Secs</div></div>
+  `;
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// Prize tabs
+function showPrizes(group, btn) {
+  document.querySelectorAll('.ptab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('prizes-junior').style.display = group === 'junior' ? 'grid' : 'none';
+  document.getElementById('prizes-senior').style.display = group === 'senior' ? 'grid' : 'none';
+}
+
+// FAQ accordion
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => {
+    i.classList.remove('open');
+    const q = i.querySelector('.faq-q');
+    if (q) q.setAttribute('aria-expanded', 'false');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
+</script>
+</body>
+</html>
