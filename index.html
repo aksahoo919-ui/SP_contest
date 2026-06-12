@@ -491,24 +491,23 @@ section { padding: 6rem 0; }
 .booklet-footer .dl-icon { font-size: 0.9rem; color: var(--saffron); }
 
 /* ─── PRIZES ─── */
-.prizes-header-row {
-  display: flex; align-items: flex-end; justify-content: space-between;
-  gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap;
-}
-.prize-tabs {
-  display: flex; gap: 0.35rem;
-  background: var(--card-bg); border: 1px solid var(--border);
-  border-radius: 100px; padding: 0.3rem;
-}
-.ptab {
-  padding: 0.4rem 1.2rem; border-radius: 100px;
-  font-size: 0.82rem; font-weight: 600; border: none;
-  background: transparent; color: var(--text-muted); cursor: pointer;
-  transition: all 0.2s;
-}
-.ptab.active { background: var(--saffron); color: #fff; }
 .prizes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 @media (max-width: 600px) { .prizes-grid { grid-template-columns: 1fr; } }
+.prize-group-title {
+  display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.6rem;
+  font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600;
+  color: var(--text); margin-bottom: 1.25rem;
+}
+.prize-group-title::before {
+  content: ''; width: 28px; height: 3px; border-radius: 3px;
+  background: var(--saffron); align-self: center;
+}
+.prize-group-title.junior::before { background: var(--gold); }
+.prize-group-title span {
+  font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.04em; color: var(--text-muted);
+}
+.prize-group:not(:first-of-type) { margin-top: 3.5rem; }
 .prize-card {
   background: var(--card-bg); border: 1px solid var(--border);
   border-radius: var(--radius); overflow: hidden;
@@ -931,85 +930,85 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
 <!-- PRIZES -->
 <section id="prizes" class="section-alt">
   <div class="container">
-    <div class="prizes-header-row">
-      <div>
-        <p class="eyebrow">Prizes</p>
-        <h2 class="section-title" style="margin-bottom:0;">Exceptional rewards<br>for exceptional readers</h2>
-      </div>
-      <div class="prize-tabs">
-        <button class="ptab active" onclick="showPrizes('junior',this)">Junior (8–16)</button>
-        <button class="ptab" onclick="showPrizes('senior',this)">Senior (17+)</button>
-      </div>
-    </div>
+    <p class="eyebrow">Prizes</p>
+    <h2 class="section-title">Exceptional rewards<br>for exceptional readers</h2>
 
-    <div id="prizes-junior" class="prizes-grid">
-      <div class="prize-card gold-card">
-        <div class="prize-img-wrap">
-          <img src="images/prize-electric-cycle.jpg" alt="1st Prize: Electric Cycle" width="400" height="300" loading="lazy" onerror="imgFallback(this)" />
-          <span class="prize-emoji" style="display:none;">⚡🚲</span>
+    <!-- Senior group -->
+    <div class="prize-group">
+      <h3 class="prize-group-title senior">Senior Group <span>Ages 17 and above</span></h3>
+      <div class="prizes-grid">
+        <div class="prize-card gold-card">
+          <div class="prize-img-wrap">
+            <img src="images/prize-scooter.jpg" alt="1st Prize: Electric Scooter" width="400" height="300" loading="lazy" onerror="imgFallback(this)" />
+            <span class="prize-emoji" style="display:none;">⚡🛵</span>
+          </div>
+          <div class="prize-body">
+            <div class="prize-medal">🥇</div>
+            <div class="prize-rank">1st Prize</div>
+            <div class="prize-name">Electric Scooter</div>
+          </div>
         </div>
-        <div class="prize-body">
-          <div class="prize-medal">🥇</div>
-          <div class="prize-rank">1st Prize</div>
-          <div class="prize-name">Electric Cycle</div>
+        <div class="prize-card">
+          <div class="prize-img-wrap">
+            <img src="images/prize-laptop.jpg" alt="2nd Prize: Laptop" width="400" height="300" loading="lazy" onerror="imgFallback(this)" />
+            <span class="prize-emoji" style="display:none;">💻</span>
+          </div>
+          <div class="prize-body">
+            <div class="prize-medal">🥈</div>
+            <div class="prize-rank">2nd Prize</div>
+            <div class="prize-name">Laptop</div>
+          </div>
         </div>
-      </div>
-      <div class="prize-card">
-        <div class="prize-img-wrap">
-          <img src="images/prize-gear-cycle.jpg" alt="2nd Prize: Gear Cycle" width="400" height="300" loading="lazy" onerror="imgFallback(this)" />
-          <span class="prize-emoji" style="display:none;">🚲</span>
-        </div>
-        <div class="prize-body">
-          <div class="prize-medal">🥈</div>
-          <div class="prize-rank">2nd Prize</div>
-          <div class="prize-name">Gear Cycle</div>
-        </div>
-      </div>
-      <div class="prize-card">
-        <div class="prize-img-wrap">
-          <img src="images/prize-cycle.jpg" alt="3rd Prize: Cycle" width="400" height="300" loading="lazy" onerror="imgFallback(this)" />
-          <span class="prize-emoji" style="display:none;">🚲</span>
-        </div>
-        <div class="prize-body">
-          <div class="prize-medal">🥉</div>
-          <div class="prize-rank">3rd Prize</div>
-          <div class="prize-name">Cycle</div>
+        <div class="prize-card">
+          <div class="prize-img-wrap">
+            <img src="images/prize-tablet.jpg" alt="3rd Prize: Tablet" width="400" height="300" loading="lazy" onerror="imgFallback(this)" />
+            <span class="prize-emoji" style="display:none;">📱</span>
+          </div>
+          <div class="prize-body">
+            <div class="prize-medal">🥉</div>
+            <div class="prize-rank">3rd Prize</div>
+            <div class="prize-name">Tablet</div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div id="prizes-senior" class="prizes-grid" style="display:none;">
-      <div class="prize-card gold-card">
-        <div class="prize-img-wrap">
-          <img src="images/prize-scooter.jpg" alt="1st Prize: Electric Scooter" width="400" height="300" loading="lazy" onerror="imgFallback(this)" />
-          <span class="prize-emoji" style="display:none;">⚡🛵</span>
+    <!-- Junior group -->
+    <div class="prize-group">
+      <h3 class="prize-group-title junior">Junior Group <span>Ages 8 to 16</span></h3>
+      <div class="prizes-grid">
+        <div class="prize-card gold-card">
+          <div class="prize-img-wrap">
+            <img src="images/prize-electric-cycle.jpg" alt="1st Prize: Electric Cycle" width="400" height="300" loading="lazy" onerror="imgFallback(this)" />
+            <span class="prize-emoji" style="display:none;">⚡🚲</span>
+          </div>
+          <div class="prize-body">
+            <div class="prize-medal">🥇</div>
+            <div class="prize-rank">1st Prize</div>
+            <div class="prize-name">Electric Cycle</div>
+          </div>
         </div>
-        <div class="prize-body">
-          <div class="prize-medal">🥇</div>
-          <div class="prize-rank">1st Prize</div>
-          <div class="prize-name">Electric Scooter</div>
+        <div class="prize-card">
+          <div class="prize-img-wrap">
+            <img src="images/prize-gear-cycle.jpg" alt="2nd Prize: Gear Cycle" width="400" height="300" loading="lazy" onerror="imgFallback(this)" />
+            <span class="prize-emoji" style="display:none;">🚲</span>
+          </div>
+          <div class="prize-body">
+            <div class="prize-medal">🥈</div>
+            <div class="prize-rank">2nd Prize</div>
+            <div class="prize-name">Gear Cycle</div>
+          </div>
         </div>
-      </div>
-      <div class="prize-card">
-        <div class="prize-img-wrap">
-          <img src="images/prize-laptop.jpg" alt="2nd Prize: Laptop" width="400" height="300" loading="lazy" onerror="imgFallback(this)" />
-          <span class="prize-emoji" style="display:none;">💻</span>
-        </div>
-        <div class="prize-body">
-          <div class="prize-medal">🥈</div>
-          <div class="prize-rank">2nd Prize</div>
-          <div class="prize-name">Laptop</div>
-        </div>
-      </div>
-      <div class="prize-card">
-        <div class="prize-img-wrap">
-          <img src="images/prize-tablet.jpg" alt="3rd Prize: Tablet" width="400" height="300" loading="lazy" onerror="imgFallback(this)" />
-          <span class="prize-emoji" style="display:none;">📱</span>
-        </div>
-        <div class="prize-body">
-          <div class="prize-medal">🥉</div>
-          <div class="prize-rank">3rd Prize</div>
-          <div class="prize-name">Tablet</div>
+        <div class="prize-card">
+          <div class="prize-img-wrap">
+            <img src="images/prize-cycle.jpg" alt="3rd Prize: Cycle" width="400" height="300" loading="lazy" onerror="imgFallback(this)" />
+            <span class="prize-emoji" style="display:none;">🚲</span>
+          </div>
+          <div class="prize-body">
+            <div class="prize-medal">🥉</div>
+            <div class="prize-rank">3rd Prize</div>
+            <div class="prize-name">Cycle</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1298,14 +1297,6 @@ function updateCountdown() {
 }
 updateCountdown();
 setInterval(updateCountdown, 1000);
-
-// Prize tabs
-function showPrizes(group, btn) {
-  document.querySelectorAll('.ptab').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('prizes-junior').style.display = group === 'junior' ? 'grid' : 'none';
-  document.getElementById('prizes-senior').style.display = group === 'senior' ? 'grid' : 'none';
-}
 
 // FAQ accordion
 function toggleFaq(btn) {
