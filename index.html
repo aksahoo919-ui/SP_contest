@@ -632,26 +632,40 @@ section { padding: 6rem 0; }
 .appeal-cta .btn-primary { font-size: 1rem; padding: 0.95rem 2.6rem; }
 .appeal-note { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.85rem; }
 
-/* ─── GALLERY ─── */
+/* ─── VIDEO GALLERY ─── */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem; margin-top: 3rem;
 }
-@media (max-width: 700px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
-.gallery-item {
+@media (max-width: 860px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .gallery-grid { grid-template-columns: 1fr; } }
+.video-item {
+  display: block; width: 100%; padding: 0; margin: 0; font: inherit;
   border-radius: var(--radius-sm); overflow: hidden;
   background: var(--card-bg); border: 1px solid var(--border);
-  aspect-ratio: 4/3; position: relative;
+  aspect-ratio: 16/9; position: relative; cursor: pointer;
+  transition: border-color 0.2s;
 }
-.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.35s; }
-.gallery-item:hover img { transform: scale(1.04); }
-.gallery-item .g-placeholder {
-  width: 100%; height: 100%;
+.video-item:hover { border-color: rgba(240,106,27,0.5); }
+.video-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.35s; }
+.video-item:hover img { transform: scale(1.04); }
+.video-item .play-btn {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 60px; height: 60px; border-radius: 50%;
+  background: rgba(240,106,27,0.92);
   display: flex; align-items: center; justify-content: center;
-  font-size: 0.8rem; color: var(--text-muted); text-align: center; padding: 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  transition: transform 0.2s, background 0.2s;
 }
-.gallery-item.tall { grid-row: span 2; aspect-ratio: auto; }
+.video-item .play-btn::before {
+  content: ''; margin-left: 4px;
+  border-style: solid; border-width: 10px 0 10px 17px;
+  border-color: transparent transparent transparent #fff;
+}
+.video-item:hover .play-btn { transform: translate(-50%, -50%) scale(1.08); background: var(--saffron-dim); }
+.video-item.playing { cursor: default; }
+.video-item iframe { width: 100%; height: 100%; border: 0; display: block; }
 
 /* ─── SCHEDULE ─── */
 .timeline { margin-top: 2.5rem; position: relative; padding-left: 2rem; }
@@ -1211,26 +1225,37 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
   </div>
 </section>
 
-<!-- GALLERY -->
+<!-- VIDEO GALLERY -->
 <section class="section-alt" id="gallery">
   <div class="container">
-    <p class="eyebrow">Gallery</p>
+    <p class="eyebrow">Videos</p>
     <h2 class="section-title">Moments from the contest</h2>
-    <p class="section-lead">Photos from ceremonies, events, and participants across the contest.</p>
+    <p class="section-lead">Watch highlights from ceremonies, events, and the contest journey. Click any video to play it right here.</p>
     <div class="gallery-grid">
-      <!--
-        GALLERY IMAGES — Replace each placeholder with:
-        <img src="images/gallery-1.jpg" alt="Award ceremony" width="600" height="450" loading="lazy" />
-        Recommended: 6 photos, landscape orientation (4:3), min 600px wide
-        For a tall/featured image, add class="tall" to .gallery-item
-      -->
-      <div class="gallery-item tall">
-        <div class="g-placeholder">📸<br><br><code style="font-size:0.7rem;color:var(--saffron);">images/gallery-1.jpg</code><br><span style="font-size:0.7rem;">Featured photo (tall)</span></div>
+      <div class="video-item" data-yt="t2oDqyIjJcE" role="button" tabindex="0" aria-label="Play contest video 1" onclick="playVideo(this)">
+        <img src="https://img.youtube.com/vi/t2oDqyIjJcE/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/t2oDqyIjJcE/hqdefault.jpg'" alt="Contest video 1" loading="lazy" />
+        <span class="play-btn" aria-hidden="true"></span>
       </div>
-      <div class="gallery-item"><div class="g-placeholder">📸<br><code style="font-size:0.7rem;color:var(--saffron);">images/gallery-2.jpg</code></div></div>
-      <div class="gallery-item"><div class="g-placeholder">📸<br><code style="font-size:0.7rem;color:var(--saffron);">images/gallery-3.jpg</code></div></div>
-      <div class="gallery-item"><div class="g-placeholder">📸<br><code style="font-size:0.7rem;color:var(--saffron);">images/gallery-4.jpg</code></div></div>
-      <div class="gallery-item"><div class="g-placeholder">📸<br><code style="font-size:0.7rem;color:var(--saffron);">images/gallery-5.jpg</code></div></div>
+      <div class="video-item" data-yt="nTwkZP_Fijg" role="button" tabindex="0" aria-label="Play contest video 2" onclick="playVideo(this)">
+        <img src="https://img.youtube.com/vi/nTwkZP_Fijg/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/nTwkZP_Fijg/hqdefault.jpg'" alt="Contest video 2" loading="lazy" />
+        <span class="play-btn" aria-hidden="true"></span>
+      </div>
+      <div class="video-item" data-yt="fd4Ul1OW2AU" role="button" tabindex="0" aria-label="Play contest video 3" onclick="playVideo(this)">
+        <img src="https://img.youtube.com/vi/fd4Ul1OW2AU/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/fd4Ul1OW2AU/hqdefault.jpg'" alt="Contest video 3" loading="lazy" />
+        <span class="play-btn" aria-hidden="true"></span>
+      </div>
+      <div class="video-item" data-yt="-Cjb8oWrW3A" role="button" tabindex="0" aria-label="Play contest video 4" onclick="playVideo(this)">
+        <img src="https://img.youtube.com/vi/-Cjb8oWrW3A/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/-Cjb8oWrW3A/hqdefault.jpg'" alt="Contest video 4" loading="lazy" />
+        <span class="play-btn" aria-hidden="true"></span>
+      </div>
+      <div class="video-item" data-yt="W0nX_P5gwf8" role="button" tabindex="0" aria-label="Play contest video 5" onclick="playVideo(this)">
+        <img src="https://img.youtube.com/vi/W0nX_P5gwf8/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/W0nX_P5gwf8/hqdefault.jpg'" alt="Contest video 5" loading="lazy" />
+        <span class="play-btn" aria-hidden="true"></span>
+      </div>
+      <div class="video-item" data-yt="IBH7rupSYUg" role="button" tabindex="0" aria-label="Play contest video 6" onclick="playVideo(this)">
+        <img src="https://img.youtube.com/vi/IBH7rupSYUg/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/IBH7rupSYUg/hqdefault.jpg'" alt="Contest video 6" loading="lazy" />
+        <span class="play-btn" aria-hidden="true"></span>
+      </div>
     </div>
   </div>
 </section>
@@ -1464,6 +1489,22 @@ function toggleFaq(btn) {
     btn.setAttribute('aria-expanded', 'true');
   }
 }
+
+// Video gallery — swap the thumbnail facade for the YouTube player on click
+function playVideo(el) {
+  if (el.classList.contains('playing')) return;
+  const id = el.dataset.yt;
+  el.classList.add('playing');
+  el.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id +
+    '?autoplay=1&rel=0" title="YouTube video player" allow="accelerometer; autoplay; ' +
+    'clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
+    'allowfullscreen></iframe>';
+}
+document.querySelectorAll('.video-item').forEach(el => {
+  el.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); playVideo(el); }
+  });
+});
 </script>
 </body>
 </html>
