@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Get your ŚREṢṬHA Contest 2026 study booklet — order a hardcopy for Rs 30 or download the free PDF.">
+<link rel="canonical" href="https://sresthacontest.com/booklet.html">
+
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ŚREṢṬHA Contest 2026">
+<meta property="og:url" content="https://sresthacontest.com/booklet.html">
+<meta property="og:title" content="Get Your Booklet — ŚREṢṬHA Contest 2026">
+<meta property="og:description" content="Order a hardcopy booklet for Rs 30 or download the free PDF. Available in English and Telugu.">
+<meta property="og:image" content="https://sresthacontest.com/images/logo.png">
+
+<title>Get Your Booklet — ŚREṢṬHA Contest 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --saffron:      #F06A1B;
+  --saffron-dim:  #C45510;
+  --gold:         #D4A843;
+  --radius:       14px;
+  --radius-sm:    8px;
+  --radius-xs:    6px;
+}
+
+:root {
+  --saffron-glow:   rgba(240,106,27,0.10);
+  --gold-light:     rgba(212,168,67,0.10);
+  --bg:             #FDFAF4;
+  --bg-2:           #F5EFE3;
+  --bg-3:           #EDE5D5;
+  --text:           #1A1208;
+  --text-muted:     #6B5340;
+  --border:         rgba(180,130,60,0.18);
+  --border-strong:  rgba(180,130,60,0.32);
+  --nav-bg:         rgba(253,250,244,0.94);
+  --nav-hover-bg:   rgba(0,0,0,0.04);
+  --card-bg:        #FFFFFF;
+  --card-bg-alt:    #F5EFE3;
+  --placeholder-bg: #EDE5D5;
+  --footer-bg:      #1A1208;
+  --footer-text:    #F0E8D8;
+  --footer-muted:   #9A8A72;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --saffron-glow:   rgba(240,106,27,0.18);
+    --gold-light:     rgba(212,168,67,0.12);
+    --bg:             #0E0A05;
+    --bg-2:           #1A1208;
+    --bg-3:           #231A0D;
+    --text:           #F0E8D8;
+    --text-muted:     #9A8A72;
+    --border:         rgba(212,168,67,0.15);
+    --border-strong:  rgba(212,168,67,0.28);
+    --nav-bg:         rgba(14,10,5,0.92);
+    --nav-hover-bg:   rgba(255,255,255,0.05);
+    --card-bg:        #231A0D;
+    --card-bg-alt:    #1A1208;
+    --placeholder-bg: #2E2010;
+    --footer-bg:      #1A1208;
+    --footer-text:    #F0E8D8;
+    --footer-muted:   #9A8A72;
+  }
+}
+
+html { scroll-behavior: smooth; font-size: calc(16px + 2pt); }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 1rem;
+  overflow-x: hidden;
+}
+
+.container { max-width: 1120px; margin: 0 auto; padding: 0 2rem; }
+.eyebrow {
+  display: inline-block;
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--saffron); margin-bottom: 1rem;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 600; color: var(--text);
+  line-height: 1.15; margin-bottom: 1rem;
+}
+.section-lead {
+  font-size: 1rem; color: var(--text-muted);
+  max-width: 560px; line-height: 1.75;
+}
+
+/* ─── BUTTONS ─── */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--saffron); color: #fff;
+  padding: 0.8rem 1.75rem; border-radius: 100px;
+  font-weight: 700; font-size: 0.88rem;
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+.btn-primary:hover { background: var(--saffron-dim); transform: translateY(-2px); }
+
+.btn-free {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: transparent; color: var(--text);
+  padding: 0.8rem 1.75rem; border-radius: 100px;
+  font-weight: 600; font-size: 0.88rem;
+  text-decoration: none; letter-spacing: 0.04em;
+  border: 1.5px solid var(--border-strong);
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+.btn-free:hover { border-color: var(--saffron); background: var(--saffron-glow); transform: translateY(-2px); }
+
+/* ─── NAV ─── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--nav-bg); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1120px; margin: 0 auto; padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 66px; gap: 2rem;
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.nav-logo img { width: 38px; height: 38px; object-fit: contain; border-radius: 6px; }
+.nav-logo-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: calc(1.2rem - 2pt); font-weight: 600;
+  color: var(--text); letter-spacing: 0.02em;
+}
+.nav-links { display: flex; align-items: center; gap: 0.2rem; list-style: none; }
+.nav-links a {
+  display: block; padding: 0.4rem 0.9rem;
+  font-size: calc(0.85rem - 2pt); font-weight: 500;
+  color: var(--text-muted); text-decoration: none;
+  border-radius: var(--radius-xs);
+  transition: color 0.15s, background 0.15s;
+}
+.nav-links a:hover { color: var(--text); background: var(--nav-hover-bg); }
+.nav-links a.active { color: var(--saffron); }
+.nav-cta {
+  background: var(--saffron) !important; color: #fff !important;
+  padding: 0.45rem 1.2rem !important; border-radius: 100px !important;
+  font-weight: 700 !important;
+}
+.nav-cta:hover { background: var(--saffron-dim) !important; }
+
+.hamburger {
+  display: none; background: none; border: none; cursor: pointer;
+  padding: 8px; flex-direction: column; gap: 5px;
+}
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: 0.3s; }
+.mobile-menu {
+  display: none; flex-direction: column; padding: 1rem 2rem 1.5rem; gap: 0.25rem;
+  border-top: 1px solid var(--border);
+}
+.mobile-menu a {
+  padding: 0.7rem 0; font-size: 1rem; font-weight: 500;
+  color: var(--text-muted); text-decoration: none;
+  border-bottom: 1px solid var(--border);
+}
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover { color: var(--saffron); }
+.mobile-menu .m-cta {
+  background: var(--saffron); color: #fff !important;
+  text-align: center; border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem !important; font-weight: 700 !important;
+  border-bottom: none !important; margin-top: 0.5rem;
+}
+@media (max-width: 940px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .mobile-menu.open { display: flex; }
+}
+
+/* ─── PAGE HERO ─── */
+.page-hero {
+  padding: 5rem 0 3.5rem;
+  text-align: center;
+}
+.page-hero .section-lead { margin: 0 auto; font-size: 1.1rem; max-width: 640px; }
+
+/* ─── OPTION BADGES ─── */
+.options-row {
+  display: flex; gap: 1.75rem; justify-content: center; flex-wrap: wrap;
+  margin: 2.5rem 0 0;
+}
+.option-badge {
+  display: flex; align-items: flex-start; gap: 1.25rem;
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.75rem 2rem;
+  max-width: 420px; width: 100%;
+}
+.option-badge .ob-icon {
+  width: 54px; height: 54px; border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem; flex-shrink: 0;
+}
+.ob-icon.hardcopy { background: var(--saffron-glow); border: 1px solid rgba(240,106,27,0.25); }
+.ob-icon.pdf      { background: var(--gold-light);   border: 1px solid rgba(212,168,67,0.25); }
+.option-badge h3 { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 0.35rem; }
+.option-badge p  { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
+
+/* ─── GROUP SECTIONS ─── */
+.group-section { padding: 4rem 0; }
+.group-section + .group-section {
+  border-top: 1px solid var(--border);
+}
+.group-header { margin-bottom: 2.5rem; }
+.group-tag {
+  display: inline-block; font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.25rem 0.8rem; border-radius: 100px; margin-bottom: 0.75rem;
+}
+.group-tag.junior { background: var(--gold-light); color: var(--gold); border: 1px solid rgba(212,168,67,0.3); }
+.group-tag.senior { background: var(--saffron-glow); color: var(--saffron); border: 1px solid rgba(240,106,27,0.3); }
+.group-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 600;
+  color: var(--text); line-height: 1.2;
+}
+.group-header .age { font-size: 0.88rem; color: var(--text-muted); margin-top: 0.2rem; }
+
+/* ─── BOOKLET CARDS ─── */
+.booklets-row {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.booklet-card {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden;
+}
+.booklet-card .lang-header {
+  padding: 1rem 1.25rem 0;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.booklet-cover {
+  width: 100%; aspect-ratio: 3/4;
+  background: var(--placeholder-bg);
+  overflow: hidden; display: flex; align-items: center; justify-content: center;
+  margin: 0.75rem 0 0;
+}
+.booklet-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.booklet-cover .cover-placeholder { font-size: 3.5rem; opacity: 0.18; }
+
+.booklet-actions {
+  padding: 1.25rem;
+  display: flex; flex-direction: column; gap: 0.75rem;
+}
+.action-row {
+  display: flex; flex-direction: column; gap: 0.35rem;
+}
+.action-row .action-label {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.action-row .price-tag {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem; font-weight: 600; color: var(--saffron);
+  margin-bottom: 0.25rem;
+}
+.action-row .price-free {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem; font-weight: 600; color: var(--gold);
+  margin-bottom: 0.25rem;
+}
+.action-divider {
+  height: 1px; background: var(--border); margin: 0.25rem 0;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--footer-bg);
+  border-top: 1px solid rgba(212,168,67,0.15);
+  padding: 3rem 2rem; text-align: center;
+}
+.footer-logo { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 0.75rem; }
+.footer-logo img { width: 36px; height: 36px; object-fit: contain; border-radius: 6px; }
+.footer-logo .fl-placeholder { width: 36px; height: 36px; border-radius: 6px; background: #2E2010; display: inline-block; }
+.footer-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--footer-text); }
+footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
+.footer-hk { font-style: italic; color: var(--gold); font-size: 0.95rem; margin: 0.5rem 0; }
+.footer-copy { font-size: 0.75rem; opacity: 0.4; margin-top: 0.5rem; }
+
+@media (max-width: 600px) {
+  .booklets-row { grid-template-columns: 1fr; }
+  .options-row { flex-direction: column; align-items: center; }
+  .option-badge { max-width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <picture>
+        <source srcset="images/logo_white.png" media="(prefers-color-scheme: dark)" />
+        <img src="images/logo_black.png" alt="ŚREṢṬHA Contest" width="78" height="78" onerror="imgFallback(this)" />
+      </picture>
+      <div style="width:38px;height:38px;border-radius:8px;background:var(--saffron-glow);border:1px solid rgba(240,106,27,0.3);display:none;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">ॐ</div>
+      <span class="nav-logo-text">ŚREṢṬHA Contest</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="booklet.html" class="active">Study Material</a></li>
+      <li><a href="index.html#prizes">Prizes</a></li>
+      <li><a href="index.html#schedule">Schedule</a></li>
+      <li><a href="index.html#faqs">FAQs</a></li>
+      <li><a href="index.html#donate">Donate</a></li>
+      <li><a href="index.html#volunteer">Volunteer</a></li>
+      <li><a href="https://forms.gle/7n8rGLdmuz2VHsPf7" target="_blank" class="nav-cta">Register →</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#about" onclick="closeMobile()">About</a>
+    <a href="booklet.html" onclick="closeMobile()">Study Material</a>
+    <a href="index.html#prizes" onclick="closeMobile()">Prizes</a>
+    <a href="index.html#schedule" onclick="closeMobile()">Schedule</a>
+    <a href="index.html#faqs" onclick="closeMobile()">FAQs</a>
+    <a href="index.html#donate" onclick="closeMobile()">Donate</a>
+    <a href="index.html#volunteer" onclick="closeMobile()">Volunteer</a>
+    <a href="https://forms.gle/7n8rGLdmuz2VHsPf7" target="_blank" class="m-cta">Register →</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Study Material</p>
+    <h1 class="section-title">Get Your Booklet</h1>
+    <p class="section-lead">Choose the right booklet for your age group and how you'd like to receive it — a printed hardcopy or a free digital PDF.</p>
+
+    <div class="options-row">
+      <div class="option-badge">
+        <div class="ob-icon hardcopy">📖</div>
+        <div>
+          <h3>Hardcopy — Rs 30</h3>
+          <p>Pay online and collect it either from your school or ISKCON Abids, Hyderabad</p>
+        </div>
+      </div>
+      <div class="option-badge">
+        <div class="ob-icon pdf">📄</div>
+        <div>
+          <h3>PDF — Free</h3>
+          <p>Download the digital copy instantly, completely free of cost.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GROUP 1: JUNIOR -->
+<section class="group-section">
+  <div class="container">
+    <div class="group-header">
+      <span class="group-tag junior">Group 1</span>
+      <h2>Junior Group</h2>
+      <p class="age">Ages 8 to 16 years</p>
+    </div>
+
+    <div class="booklets-row">
+
+      <!-- Junior · English -->
+      <div class="booklet-card">
+        <div class="lang-header">English</div>
+        <div class="booklet-cover">
+          <img src="images/booklet-junior-eng.png" alt="Junior Group — English Booklet" width="300" height="400" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="cover-placeholder" style="display:none;">📗</div>
+        </div>
+        <div class="booklet-actions">
+          <div class="action-row">
+            <span class="action-label">Hardcopy</span>
+            <span class="price-tag">Rs 30</span>
+            <!-- TODO: replace href with your Razorpay booklet-payment link -->
+            <a href="https://srestha-pay.vercel.app/" target="_blank" rel="noopener" class="btn-primary">Pay &amp; Order Hardcopy →</a>
+          </div>
+          <div class="action-divider"></div>
+          <div class="action-row">
+            <span class="action-label">Digital PDF</span>
+            <span class="price-free">Free</span>
+            <a href="https://drive.google.com/file/d/1ddBmYTkuw-dBDZXOCZEjJbPx4IKS5uNA/view?usp=drive_link" target="_blank" rel="noopener" class="btn-free">Download PDF ↓</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Junior · Telugu -->
+      <div class="booklet-card">
+        <div class="lang-header">Telugu</div>
+        <div class="booklet-cover">
+          <img src="images/booklet-junior-tel.png" alt="Junior Group — Telugu Booklet" width="300" height="400" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="cover-placeholder" style="display:none;">📗</div>
+        </div>
+        <div class="booklet-actions">
+          <div class="action-row">
+            <span class="action-label">Hardcopy</span>
+            <span class="price-tag">Rs 30</span>
+            <!-- TODO: replace href with your Razorpay booklet-payment link -->
+            <a href="https://srestha-pay.vercel.app/" target="_blank" rel="noopener" class="btn-primary">Pay &amp; Order Hardcopy →</a>
+          </div>
+          <div class="action-divider"></div>
+          <div class="action-row">
+            <span class="action-label">Digital PDF</span>
+            <span class="price-free">Free</span>
+            <a href="https://drive.google.com/file/d/1ddBmYTkuw-dBDZXOCZEjJbPx4IKS5uNA/view?usp=drive_link" target="_blank" rel="noopener" class="btn-free">Download PDF ↓</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GROUP 2: SENIOR -->
+<section class="group-section">
+  <div class="container">
+    <div class="group-header">
+      <span class="group-tag senior">Group 2</span>
+      <h2>Senior Group</h2>
+      <p class="age">Ages 17 and above</p>
+    </div>
+
+    <div class="booklets-row">
+
+      <!-- Senior · English -->
+      <div class="booklet-card">
+        <div class="lang-header">English</div>
+        <div class="booklet-cover">
+          <img src="images/booklet-senior-eng.png" alt="Senior Group — English Booklet" width="300" height="400" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="cover-placeholder" style="display:none;">📘</div>
+        </div>
+        <div class="booklet-actions">
+          <div class="action-row">
+            <span class="action-label">Hardcopy</span>
+            <span class="price-tag">Rs 30</span>
+            <!-- TODO: replace href with your Razorpay booklet-payment link -->
+            <a href="https://srestha-pay.vercel.app/" target="_blank" rel="noopener" class="btn-primary">Pay &amp; Order Hardcopy →</a>
+          </div>
+          <div class="action-divider"></div>
+          <div class="action-row">
+            <span class="action-label">Digital PDF</span>
+            <span class="price-free">Free</span>
+            <a href="https://drive.google.com/file/d/1TIIqx_rvgUplohRhQFT7_z8ARosJC3SJ/view?usp=drive_link" target="_blank" rel="noopener" class="btn-free">Download PDF ↓</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Senior · Telugu -->
+      <div class="booklet-card">
+        <div class="lang-header">Telugu</div>
+        <div class="booklet-cover">
+          <img src="images/booklet-senior-tel.png" alt="Senior Group — Telugu Booklet" width="300" height="400" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="cover-placeholder" style="display:none;">📘</div>
+        </div>
+        <div class="booklet-actions">
+          <div class="action-row">
+            <span class="action-label">Hardcopy</span>
+            <span class="price-tag">Rs 30</span>
+            <!-- TODO: replace href with your Razorpay booklet-payment link -->
+            <a href="https://srestha-pay.vercel.app/" target="_blank" rel="noopener" class="btn-primary">Pay &amp; Order Hardcopy →</a>
+          </div>
+          <div class="action-divider"></div>
+          <div class="action-row">
+            <span class="action-label">Digital PDF</span>
+            <span class="price-free">Free</span>
+            <a href="https://drive.google.com/file/d/17RdGyioFjYVrf_7mTVkdJ4aEzKpFc1Pi/view?usp=drive_link" target="_blank" rel="noopener" class="btn-free">Download PDF ↓</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="images/logo_white.png" alt="Sreshtha Contest" width="76" height="76" loading="lazy" onerror="imgFallback(this)" />
+    <div class="fl-placeholder" style="display:none;align-items:center;justify-content:center;font-size:1rem;">ॐ</div>
+    <span class="footer-logo-text">ŚREṢṬHA Contest 2026</span>
+  </div>
+  <p>An initiative by ISKCON Abids, Hyderabad</p>
+  <p class="footer-hk">Hare Krishna 🙏</p>
+  <p class="footer-copy">© 2026 Srestha Contest. All rights reserved.</p>
+</footer>
+
+<script>
+function imgFallback(img) {
+  const el = img.closest('picture') || img;
+  el.style.display = 'none';
+  const ph = el.nextElementSibling;
+  if (ph) ph.style.display = 'flex';
+}
+
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+});
+function closeMobile() {
+  mobileMenu.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  hamburger.setAttribute('aria-label', 'Open menu');
+}
+</script>
+</body>
+</html>

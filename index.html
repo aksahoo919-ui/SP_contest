@@ -604,7 +604,7 @@ section { padding: 6rem 0; }
 /* ─── DONATE / VOLUNTEER (shared appeal panel) ─── */
 .appeal-grid {
   display: grid; grid-template-columns: 0.85fr 1fr;
-  gap: 3.5rem; align-items: center;
+  gap: 3.5rem; align-items: start;
 }
 @media (max-width: 860px) { .appeal-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
 .appeal-intro .section-title { margin-bottom: 1rem; }
@@ -800,13 +800,13 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
     </a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#material">Study Material</a></li>
+      <li><a href="booklet.html">Study Material</a></li>
       <li><a href="#prizes">Prizes</a></li>
       <li><a href="#schedule">Schedule</a></li>
       <li><a href="#faqs">FAQs</a></li>
       <li><a href="#donate">Donate</a></li>
       <li><a href="#volunteer">Volunteer</a></li>
-      <li><a href="https://forms.gle/7n8rGLdmuz2VHsPf7" target="_blank" class="nav-cta">Register Free →</a></li>
+      <li><a href="https://forms.gle/7n8rGLdmuz2VHsPf7" target="_blank" class="nav-cta">Register →</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
@@ -814,13 +814,13 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
   </div>
   <div class="mobile-menu" id="mobileMenu">
     <a href="#about" onclick="closeMobile()">About</a>
-    <a href="#material" onclick="closeMobile()">Study Material</a>
+    <a href="booklet.html" onclick="closeMobile()">Study Material</a>
     <a href="#prizes" onclick="closeMobile()">Prizes</a>
     <a href="#schedule" onclick="closeMobile()">Schedule</a>
     <a href="#faqs" onclick="closeMobile()">FAQs</a>
     <a href="#donate" onclick="closeMobile()">Donate</a>
     <a href="#volunteer" onclick="closeMobile()">Volunteer</a>
-    <a href="https://forms.gle/7n8rGLdmuz2VHsPf7" target="_blank" class="m-cta">Register Free →</a>
+    <a href="https://forms.gle/7n8rGLdmuz2VHsPf7" target="_blank" class="m-cta">Register →</a>
   </div>
 </nav>
 
@@ -832,7 +832,7 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
     <p class="hero-sub-title">Read. Reflect. Transform.</p>
     <p class="hero-desc">A free reading and knowledge contest based on the life and teachings of His Divine Grace A.C. Bhaktivedanta Swami Srila Prabhupada. One person can change the world — discover your potential.</p>
     <div class="hero-actions">
-      <a href="https://forms.gle/7n8rGLdmuz2VHsPf7" target="_blank" class="btn-primary">Register Free →</a>
+      <a href="https://forms.gle/7n8rGLdmuz2VHsPf7" target="_blank" class="btn-primary">Register →</a>
       <a href="#about" class="btn-outline">Learn More</a>
     </div>
     <div class="cd-wrap" id="countdown"></div>
@@ -937,9 +937,9 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
       </div>
       <div class="step-card">
         <div class="step-num">2</div>
-        <h3>Download Booklet</h3>
-        <p>Get the study material in English or Telugu from this website</p>
-        <a href="#material" class="step-link">Get booklet →</a>
+        <h3>Get Your Booklet</h3>
+        <p>Get the study material in English or Telugu. </p>
+        <a href="booklet.html" class="step-link">Get booklet →</a>
       </div>
       <div class="step-card">
         <div class="step-num">3</div>
@@ -956,8 +956,8 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
   </div>
 </section>
 
-<!-- STUDY MATERIAL -->
-<section id="material">
+<!-- STUDY MATERIAL (hidden — replaced by booklet.html) -->
+<section id="material" style="display:none;">
   <div class="container">
     <p class="eyebrow">Study Material</p>
     <h2 class="section-title">Download your booklet</h2>
@@ -1338,7 +1338,7 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
       <div class="faq-section-label">Study Material</div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">What will be the material for the exam? <span class="arr">▾</span></button>
-        <div class="faq-a">Read the booklet provided on this website. Download it from the <a href="#material">Study Material</a> section according to your age group. The exam is entirely based on this booklet.</div>
+        <div class="faq-a">Read the booklet provided on this website. Get it from the <a href="booklet.html">Study Material</a> page according to your age group — download the free PDF or order a hardcopy. The exam is entirely based on this booklet.</div>
       </div>
       <div class="faq-section-label">Exam</div>
       <div class="faq-item">
@@ -1405,10 +1405,10 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
 
     <div class="cta-banner">
       <h2>Ready to join the contest?</h2>
-      <p>Registration is free. Download the booklet, read the story, and discover your potential.</p>
+      <p>Registration is free. Get the booklet, read the story, and discover your potential.</p>
       <div class="cta-actions">
-        <a href="https://forms.gle/7n8rGLdmuz2VHsPf7" target="_blank" class="btn-primary">Register Free →</a>
-        <a href="#material" class="btn-outline">Download Booklet</a>
+        <a href="https://forms.gle/7n8rGLdmuz2VHsPf7" target="_blank" class="btn-primary">Register →</a>
+        <a href="booklet.html" class="btn-outline">Get Booklet</a>
       </div>
     </div>
   </div>
