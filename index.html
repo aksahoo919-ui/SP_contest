@@ -764,6 +764,20 @@ section { padding: 6rem 0; }
 .cta-banner p { font-size: 1rem; color: var(--text-muted); margin-bottom: 2rem; }
 .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
+/* ─── SCROLL TO TOP ─── */
+#scrollTopBtn {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--saffron); color: #fff; border: none;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; cursor: pointer;
+  box-shadow: 0 4px 14px rgba(240,106,27,0.4);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s, background 0.2s;
+}
+#scrollTopBtn.visible { opacity: 1; pointer-events: auto; }
+#scrollTopBtn:hover { background: var(--saffron-dim); transform: translateY(-3px); }
+
 /* ─── FOOTER ─── */
 footer {
   background: var(--footer-bg);
@@ -1266,10 +1280,6 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
         <li><strong>Event day support</strong> — assist with logistics, hospitality, and the prize ceremony</li>
       </ul>
       <p>Volunteering with us is also an opportunity to deepen your own understanding of Srila Prabhupada's incredible journey — from a small printing press in New York to a worldwide spiritual movement. Come, be a part of this celebration.</p>
-      <div class="quote-block">
-        <blockquote>"The highest perfection of human life is to remember the Lord's holy name, qualities, and pastimes at the time of death."</blockquote>
-        <cite>— Srila Prabhupada</cite>
-      </div>
       <div class="appeal-cta">
         <!-- TODO: replace href with your volunteer sign-up Google Form URL -->
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqIjIkD0QtWXEAVXftVeTQ811vH-gzccKZRSGYZvyxZJUmFQ/viewform?usp=publish-editor" target="_blank" rel="noopener" class="btn-primary">Volunteer With Us →</a>
@@ -1283,21 +1293,10 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
 <section class="section-alt" id="gallery">
   <div class="container">
     <p class="eyebrow">Videos</p>
-    <h2 class="section-title">Moments from the contest</h2>
-    <p class="section-lead">Watch highlights from ceremonies, events, and the contest journey. Click any video to play it right here.</p>
+    <h2 class="section-title">World leaders prasing Srila Prabhupada</h2>
+    <p class="section-lead">Watch the world leaders appreciating the contribution of Srila Prabhupada</p> 
+    
     <div class="gallery-grid">
-      <div class="video-item" data-yt="t2oDqyIjJcE" role="button" tabindex="0" aria-label="Play contest video 1" onclick="playVideo(this)">
-        <img src="https://img.youtube.com/vi/t2oDqyIjJcE/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/t2oDqyIjJcE/hqdefault.jpg'" alt="Contest video 1" loading="lazy" />
-        <span class="play-btn" aria-hidden="true"></span>
-      </div>
-      <div class="video-item" data-yt="nTwkZP_Fijg" role="button" tabindex="0" aria-label="Play contest video 2" onclick="playVideo(this)">
-        <img src="https://img.youtube.com/vi/nTwkZP_Fijg/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/nTwkZP_Fijg/hqdefault.jpg'" alt="Contest video 2" loading="lazy" />
-        <span class="play-btn" aria-hidden="true"></span>
-      </div>
-      <div class="video-item" data-yt="fd4Ul1OW2AU" role="button" tabindex="0" aria-label="Play contest video 3" onclick="playVideo(this)">
-        <img src="https://img.youtube.com/vi/fd4Ul1OW2AU/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/fd4Ul1OW2AU/hqdefault.jpg'" alt="Contest video 3" loading="lazy" />
-        <span class="play-btn" aria-hidden="true"></span>
-      </div>
       <div class="video-item" data-yt="-Cjb8oWrW3A" role="button" tabindex="0" aria-label="Play contest video 4" onclick="playVideo(this)">
         <img src="https://img.youtube.com/vi/-Cjb8oWrW3A/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/-Cjb8oWrW3A/hqdefault.jpg'" alt="Contest video 4" loading="lazy" />
         <span class="play-btn" aria-hidden="true"></span>
@@ -1419,10 +1418,6 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
         <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Will every participant receive a certificate? <span class="arr">▾</span></button>
         <div class="faq-a">Yes! An e-certificate will be sent to your registered email address after completing the final examination.</div>
       </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Can I add this to my LinkedIn profile? <span class="arr">▾</span></button>
-        <div class="faq-a">Absolutely — you can add your participation and certificate to your LinkedIn profile.</div>
-      </div>
     </div>
   </div>
 </section>
@@ -1431,8 +1426,6 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
 <section id="contact">
   <div class="container">
     <p class="eyebrow">Contact</p>
-    <h2 class="section-title">We're here to help</h2>
-    <p class="section-lead">Available every day of the week. Reach out with any questions about registration, the exam, or prizes.</p>
     <div class="contact-row">
       <div class="contact-card">
         <div class="cicon">📧</div>
@@ -1441,8 +1434,6 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
       </div>
       
     </div>
-    <p class="contact-hours">Available Monday to Sunday · 10:00 AM – 7:00 PM</p>
-
     <div class="cta-banner">
       <h2>Ready to join the contest?</h2>
       <p>Registration is free. Get the booklet, read the story, and discover your potential.</p>
@@ -1453,6 +1444,9 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
     </div>
   </div>
 </section>
+
+<!-- SCROLL TO TOP -->
+<button id="scrollTopBtn" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <!-- FOOTER -->
 <footer>
@@ -1540,6 +1534,12 @@ function playVideo(el) {
     'clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
     'allowfullscreen></iframe>';
 }
+// Scroll-to-top button visibility
+const scrollBtn = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', () => {
+  scrollBtn.classList.toggle('visible', window.scrollY > 400);
+}, { passive: true });
+
 document.querySelectorAll('.video-item').forEach(el => {
   el.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); playVideo(el); }
