@@ -474,6 +474,34 @@ section { padding: 6rem 0; }
   border-bottom: 1px solid rgba(240,106,27,0.3);
 }
 
+/* ─── BOOKLET OPTIONS (index teaser) ─── */
+.options-row {
+  display: flex; gap: 1.75rem; justify-content: center; flex-wrap: wrap;
+  margin: 2.5rem 0 0;
+}
+.option-badge {
+  display: flex; align-items: flex-start; gap: 1.25rem;
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.75rem 2rem;
+  max-width: 420px; width: 100%;
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.option-badge:hover { border-color: rgba(240,106,27,0.45); transform: translateY(-3px); }
+.option-badge .ob-icon {
+  width: 54px; height: 54px; border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem; flex-shrink: 0;
+}
+.ob-icon.hardcopy { background: var(--saffron-glow); border: 1px solid rgba(240,106,27,0.25); }
+.ob-icon.pdf      { background: var(--gold-light);   border: 1px solid rgba(212,168,67,0.25); }
+.option-badge h3 { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 0.35rem; }
+.option-badge p  { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
+@media (max-width: 600px) {
+  .options-row { flex-direction: column; align-items: center; }
+  .option-badge { max-width: 100%; }
+}
+
 /* ─── STUDY MATERIAL ─── */
 .groups-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
 @media (max-width: 600px) { .groups-grid { grid-template-columns: 1fr; } }
@@ -903,25 +931,6 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
   </div>
 </section>
 
-<!-- WHAT YOU GAIN -->
-<section>
-  <div class="container">
-    <div class="gain-head">
-      <p class="eyebrow">Benefits</p>
-      <h2 class="section-title">What will you gain?</h2>
-      <p class="section-lead">Learn from a life that changed the world.</p>
-      <p class="gain-quote">"One person, with true faith and determination, can change the world."</p>
-    </div>
-    <div class="gain-circles">
-      <div class="gain-circle">Leadership</div>
-      <div class="gain-circle">Positive Habits</div>
-      <div class="gain-circle">Resilience During Challenges</div>
-      <div class="gain-circle">Spiritual Wisdom</div>
-      <div class="gain-circle">Character Building</div>
-      <div class="gain-circle">Purposeful Living</div>
-    </div>
-  </div>
-</section>
 
 <!-- HOW IT WORKS -->
 <section class="section-alt" style="padding-top:0;padding-bottom:5rem;">
@@ -952,6 +961,51 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
         <p>Results & felicitation on 15 August 2026 — Independence Day!</p>
         <a href="#prizes" class="step-link">See prizes →</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- GET YOUR BOOKLET -->
+<section>
+  <div class="container">
+    <p class="eyebrow">Study Material</p>
+    <h2 class="section-title">Get Your Booklet</h2>
+    <p class="section-lead">Choose the right booklet for your age group and how you'd like to receive it — a printed hardcopy or a free digital PDF.</p>
+    <div class="options-row">
+      <a href="booklet.html" class="option-badge">
+        <div class="ob-icon hardcopy">📖</div>
+        <div>
+          <h3>Hardcopy — Rs 30</h3>
+          <p>Pay online and collect it either from your school or ISKCON Abids, Hyderabad</p>
+        </div>
+      </a>
+      <a href="booklet.html" class="option-badge">
+        <div class="ob-icon pdf">📄</div>
+        <div>
+          <h3>PDF — Free</h3>
+          <p>Download the digital copy instantly, completely free of cost.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GAIN -->
+<section>
+  <div class="container">
+    <div class="gain-head">
+      <p class="eyebrow">Benefits</p>
+      <h2 class="section-title">What will you gain?</h2>
+      <p class="section-lead">Learn from a life that changed the world.</p>
+      <p class="gain-quote">"One person, with true faith and determination, can change the world."</p>
+    </div>
+    <div class="gain-circles">
+      <div class="gain-circle">Leadership</div>
+      <div class="gain-circle">Positive Habits</div>
+      <div class="gain-circle">Resilience During Challenges</div>
+      <div class="gain-circle">Spiritual Wisdom</div>
+      <div class="gain-circle">Character Building</div>
+      <div class="gain-circle">Purposeful Living</div>
     </div>
   </div>
 </section>
@@ -1291,12 +1345,7 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
         <h3>Felicitation Ceremony & Results</h3>
         <p>Winners announced on Independence Day. Further exams and interviews for top scorers communicated on this date.</p>
       </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-date">By 30 November 2026</div>
-        <h3>Names Published & Certificates Sent</h3>
-        <p>All winner names updated on the website. E-certificates sent to all participants' registered email addresses.</p>
-      </div>
+      
     </div>
   </div>
 </section>
@@ -1364,7 +1413,7 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
       <div class="faq-section-label">Results & Certificates</div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">When will the results be announced? <span class="arr">▾</span></button>
-        <div class="faq-a">Winners will be announced on 15th August 2026 at the Felicitation Ceremony. Names will be updated on the website by 30th November. Individual marks will not be shown or shared.</div>
+        <div class="faq-a">Winners will be announced on 15th August 2026 at the Felicitation Ceremony.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Will every participant receive a certificate? <span class="arr">▾</span></button>
