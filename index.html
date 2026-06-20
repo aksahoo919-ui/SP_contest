@@ -309,18 +309,18 @@ nav {
 }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
 /* countdown */
-.cd-wrap { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-.cd-unit { text-align: center; }
+.cd-wrap { display: flex; gap: 1.5rem; flex-wrap: nowrap; align-items: flex-start; }
+.cd-unit { text-align: center; flex: 1; min-width: 0; }
 .cd-num {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2.8rem; font-weight: 600; line-height: 1;
+  font-size: clamp(1.4rem, 6vw, 2.8rem); font-weight: 600; line-height: 1;
   color: var(--saffron); min-width: 2ch;
 }
 .cd-lbl {
-  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em;
+  font-size: clamp(0.5rem, 1.5vw, 0.65rem); font-weight: 700; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--text-muted); margin-top: 2px;
 }
-.cd-sep { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: var(--border); align-self: flex-start; margin-top: 4px; }
+.cd-sep { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.2rem, 5vw, 2.2rem); color: var(--border); align-self: flex-start; margin-top: 4px; flex-shrink: 0; }
 .cd-note { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.5rem; }
 /* hero image panel */
 .hero-visual {
@@ -377,6 +377,10 @@ nav {
 
 /* ─── SECTIONS ─── */
 section { padding: 6rem 0; }
+@media (max-width: 600px) {
+  section { padding: 2.5rem 0; }
+  .hero { padding: 2.5rem 1.25rem 2rem !important; }
+}
 /* section-light uses bg-2 */
 /* light section title */
 /* light section lead */
@@ -884,11 +888,7 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
   <div class="hero-visual">
     <img src="images/pamphlet_v5.jpg" alt="Srila Prabhupada" width="480" height="600" fetchpriority="high" onerror="imgFallback(this)" />
     <div class="hero-img-placeholder" style="display:none;">
-      <div class="om">ॐ</div>
-      <p style="color:var(--text-muted);font-size:0.82rem;">
-        Add your hero image:<br>
-        <code style="font-size:0.75rem;color:var(--saffron);">images/hero-prabhupada.jpg</code>
-      </p>
+      
     </div>
     <div class="hero-badge">
       <picture>
