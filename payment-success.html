@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Successful — ŚREṢṬHA Contest 2026</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --saffron:     #F06A1B;
+  --saffron-dim: #C45510;
+  --gold:        #D4A843;
+  --radius:      14px;
+  --radius-sm:   8px;
+}
+:root {
+  --bg:          #FDFAF4;
+  --text:        #1A1208;
+  --text-muted:  #6B5340;
+  --border:      rgba(180,130,60,0.18);
+  --card-bg:     #FFFFFF;
+  --footer-bg:   #1A1208;
+  --footer-text: #F0E8D8;
+  --footer-muted:#9A8A72;
+  --saffron-glow:rgba(240,106,27,0.10);
+  --gold-light:  rgba(212,168,67,0.10);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:         #0E0A05;
+    --text:       #F0E8D8;
+    --text-muted: #9A8A72;
+    --border:     rgba(212,168,67,0.15);
+    --card-bg:    #231A0D;
+    --saffron-glow:rgba(240,106,27,0.18);
+    --gold-light:  rgba(212,168,67,0.12);
+  }
+}
+
+html { scroll-behavior: smooth; font-size: calc(16px + 2pt); }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg); color: var(--text);
+  line-height: 1.7; min-height: 100vh;
+  display: flex; flex-direction: column;
+}
+
+/* NAV */
+nav {
+  background: var(--bg); border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+}
+.nav-inner {
+  max-width: 1120px; margin: 0 auto;
+  display: flex; align-items: center; height: 66px; gap: 12px;
+  text-decoration: none;
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.nav-logo img { width: 38px; height: 38px; object-fit: contain; border-radius: 6px; }
+.nav-logo-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; font-weight: 600; color: var(--text);
+}
+
+/* MAIN */
+main {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  padding: 3rem 1.5rem;
+}
+.confirmation-card {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 3rem 2.5rem;
+  max-width: 520px; width: 100%; text-align: center;
+}
+
+.check-circle {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: rgba(34,197,94,0.12); border: 2px solid rgba(34,197,94,0.35);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.75rem;
+  font-size: 2rem;
+}
+
+.confirmation-card h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 600;
+  color: var(--text); line-height: 1.2; margin-bottom: 0.75rem;
+}
+.confirmation-card .subtitle {
+  font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.65;
+}
+
+.info-box {
+  background: var(--saffron-glow); border: 1px solid rgba(240,106,27,0.2);
+  border-radius: var(--radius-sm); padding: 1.25rem 1.5rem;
+  text-align: left; margin-bottom: 2rem;
+}
+.info-box p {
+  font-size: 0.875rem; color: var(--text-muted); line-height: 1.65;
+}
+.info-box strong { color: var(--text); }
+
+.divider { height: 1px; background: var(--border); margin: 1.75rem 0; }
+
+.next-steps { text-align: left; margin-bottom: 2rem; }
+.next-steps h2 {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem;
+}
+.step-item {
+  display: flex; gap: 0.85rem; align-items: flex-start;
+  margin-bottom: 0.85rem;
+}
+.step-num {
+  width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0;
+  background: var(--gold-light); border: 1px solid rgba(212,168,67,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; font-weight: 700; color: var(--gold);
+}
+.step-item p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.55; }
+.step-item p strong { color: var(--text); }
+
+.actions { display: flex; flex-direction: column; gap: 0.75rem; }
+.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--saffron); color: #fff;
+  padding: 0.8rem 1.5rem; border-radius: 100px;
+  font-weight: 700; font-size: 0.88rem;
+  text-decoration: none; transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: var(--saffron-dim); transform: translateY(-2px); }
+.btn-outline {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: transparent; color: var(--text);
+  padding: 0.8rem 1.5rem; border-radius: 100px;
+  font-weight: 500; font-size: 0.88rem;
+  text-decoration: none; border: 1px solid var(--border);
+  transition: border-color 0.2s, background 0.2s;
+}
+.btn-outline:hover { border-color: var(--saffron); background: var(--saffron-glow); }
+
+/* FOOTER */
+footer {
+  background: var(--footer-bg); border-top: 1px solid rgba(212,168,67,0.15);
+  padding: 2rem; text-align: center;
+}
+footer p { font-size: 0.78rem; color: var(--footer-muted); }
+.footer-hk { font-style: italic; color: var(--gold); margin-bottom: 0.25rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <picture>
+        <source srcset="images/logo_white.png" media="(prefers-color-scheme: dark)" />
+        <img src="images/logo_black.png" alt="ŚREṢṬHA Contest" width="78" height="78" onerror="this.style.display='none'" />
+      </picture>
+      <span class="nav-logo-text">ŚREṢṬHA Contest</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+  <div class="confirmation-card">
+
+    <div class="check-circle">✓</div>
+
+    <h1>Payment Successful!</h1>
+    <p class="subtitle">
+      Thank you for ordering your booklet. Your payment has been received
+      and your hardcopy is on its way.
+    </p>
+
+    <div class="info-box">
+      <p>📦 <strong>Hardcopy Delivery:</strong> Your booklet will be delivered to the address you provided during registration. Please allow <strong>3–5 business days</strong> for delivery.</p>
+    </div>
+
+    <div class="next-steps">
+      <h2>What's next</h2>
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <p><strong>Check your email</strong> — a payment confirmation has been sent to your registered email address.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <p><strong>Download the PDF</strong> — start studying right away with the free digital version while you wait for the hardcopy.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <p><strong>Contest date:</strong> Mark your calendar — the exam is on <strong>July 27, 2026</strong> at ISKCON Abids, Hyderabad.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="actions">
+      <a href="booklet.html" class="btn-primary">Download Free PDF →</a>
+      <a href="index.html" class="btn-outline">Back to Home</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <p class="footer-hk">Hare Krishna 🙏</p>
+  <p>An initiative by ISKCON Abids, Hyderabad &nbsp;·&nbsp; © 2026 Srestha Contest</p>
+</footer>
+
+</body>
+</html>
