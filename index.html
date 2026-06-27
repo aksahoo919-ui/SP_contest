@@ -367,9 +367,12 @@ nav {
 }
 .stat-item .num {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 3rem; font-weight: 600; color: var(--saffron); line-height: 1;
+  font-size: clamp(1.6rem, 4vw, 3rem); font-weight: 600; color: var(--saffron); line-height: 1;
 }
 .stat-item .lbl { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.3rem; }
+@media (max-width: 540px) {
+  .stat-strip .inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1rem; }
+}
 
 /* ─── SECTIONS ─── */
 section { padding: 6rem 0; }
@@ -899,37 +902,6 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
     <div class="stat-item"><div class="num">15 Aug</div><div class="lbl">Results on Independence Day</div></div>
   </div>
 </div>
-
-<!-- WHAT IS -->
-<section>
-  <div class="container">
-    <p class="eyebrow">What is it</p>
-    <h2 class="section-title">A contest that builds<br>character, not just scores</h2>
-    <p class="section-lead">Participants receive a specially designed booklet, read an inspiring true-life story, and then sit for a knowledge assessment — all for free.</p>
-    <div class="what-grid">
-      <div class="what-card">
-        <div class="ic">📖</div>
-        <h3>Read an inspiring story</h3>
-        <p>Get a specially designed booklet in English or Telugu and explore one of modern history's most remarkable journeys.</p>
-      </div>
-      <div class="what-card">
-        <div class="ic">💡</div>
-        <h3>Develop life skills & values</h3>
-        <p>Timeless principles of character, leadership, resilience, self-discipline, and spiritual wisdom.</p>
-      </div>
-      <div class="what-card">
-        <div class="ic">✍️</div>
-        <h3>Write an online exam</h3>
-        <p>MCQ-based, open-book, 1-hour assessment. Available online from 26–30 July 2026.</p>
-      </div>
-      <div class="what-card">
-        <div class="ic">🏆</div>
-        <h3>Win prizes & recognition</h3>
-        <p>Top winners take home exciting prizes. Every participant receives an e-certificate and LinkedIn recognition.</p>
-      </div>
-    </div>
-  </div>
-</section>
 <!-- PRIZES -->
 <section id="prizes" class="section-alt">
   <div class="container">
@@ -1019,6 +991,38 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
     <p class="consolation">+ Many consolation prizes for participants across both groups</p>
   </div>
 </section>
+
+<!-- WHAT IS -->
+<section>
+  <div class="container">
+    <p class="eyebrow">What is it</p>
+    <h2 class="section-title">A contest that builds<br>character, not just scores</h2>
+    <p class="section-lead">Participants receive a specially designed booklet, read an inspiring true-life story, and then sit for a knowledge assessment — all for free.</p>
+    <div class="what-grid">
+      <div class="what-card">
+        <div class="ic">📖</div>
+        <h3>Read an inspiring story</h3>
+        <p>Get a specially designed booklet in English or Telugu and explore one of modern history's most remarkable journeys.</p>
+      </div>
+      <div class="what-card">
+        <div class="ic">💡</div>
+        <h3>Develop life skills & values</h3>
+        <p>Timeless principles of character, leadership, resilience, self-discipline, and spiritual wisdom.</p>
+      </div>
+      <div class="what-card">
+        <div class="ic">✍️</div>
+        <h3>Write an online exam</h3>
+        <p>MCQ-based, open-book, 1-hour assessment. Available online from 26–30 July 2026.</p>
+      </div>
+      <div class="what-card">
+        <div class="ic">🏆</div>
+        <h3>Win prizes & recognition</h3>
+        <p>Top winners take home exciting prizes. Every participant receives an e-certificate and LinkedIn recognition.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PROMO VIDEO -->
 <section style="padding-top:0;padding-bottom:5rem;">
   <div class="container" style="text-align:center;">
