@@ -369,10 +369,7 @@ nav {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.6rem, 4vw, 3rem); font-weight: 600; color: var(--saffron); line-height: 1;
 }
-.stat-item .lbl { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.3rem; }
-@media (max-width: 540px) {
-  .stat-strip .inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1rem; }
-}
+.stat-item .lbl { font-size: clamp(0.6rem, 1.8vw, 0.82rem); color: var(--text-muted); margin-top: 0.3rem; }
 
 /* ─── SECTIONS ─── */
 section { padding: 6rem 0; }
