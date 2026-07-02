@@ -237,7 +237,7 @@ nav {
 
 /* ─── ALL-GROUPS ROW ─── */
 .all-groups-row {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+  display: grid; grid-template-columns: 2fr 3fr; gap: 2rem;
   padding: 3rem 0;
 }
 @media (max-width: 860px) {
@@ -445,7 +445,7 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
       <p class="age">Ages 17 and above</p>
     </div>
 
-    <div class="booklets-row">
+    <div class="booklets-row" style="grid-template-columns: repeat(3, 1fr);">
 
       <!-- Senior · English -->
       <div class="booklet-card">
