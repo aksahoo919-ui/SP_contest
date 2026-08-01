@@ -963,6 +963,7 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
   <div class="quiz-banner-inner">
     <div class="quiz-label"><span>Submit Quiz</span></div>
     <div class="quiz-label">choose your language & group:</div>
+    <div class="quiz-label">Submit your answers before 5th August</div>
     <div class="quiz-buttons">
       <div class="quiz-btn-pair">
         <a href="https://forms.gle/UimER5uhqrs1wd2Y8" target="_blank" rel="noopener" class="quiz-btn">
@@ -1021,7 +1022,7 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
       <a href="#about" class="btn-outline">Learn More</a>
     </div>
     <div class="cd-wrap" id="countdown"></div>
-    <p class="cd-note" style="margin-top:0.6rem;">Registration closes · 31 July 2026</p>
+    <p class="cd-note" style="margin-top:0.6rem;"></p>
   </div>
 
   <div class="hero-visual">
@@ -1632,7 +1633,7 @@ function updateCountdown() {
   const now = new Date();
   const diff = target - now;
   if (diff <= 0) {
-    document.getElementById('countdown').innerHTML = '<p style="font-size:0.85rem;color:var(--text-muted)">Registration is now closed.</p>';
+    document.getElementById('countdown').innerHTML = '<p style="font-size:0.85rem;color:var(--text-muted)">Registration is Open</p>';
     return;
   }
   const d = Math.floor(diff / 86400000);
