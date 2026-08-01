@@ -224,6 +224,7 @@ nav {
   font-family: 'Cormorant Garamond', serif;
   font-size: calc(1.2rem - 2pt); font-weight: 600;
   color: var(--text); letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 .nav-links { display: flex; align-items: center; gap: 0.2rem; list-style: none; }
 .nav-links a {
@@ -263,10 +264,21 @@ nav {
   padding: 0.75rem 1rem !important; font-weight: 700 !important;
   border-bottom: none !important; margin-top: 0.5rem;
 }
+.nav-mobile-register {
+  display: none;
+  background: var(--saffron); color: #fff;
+  padding: 0.4rem 1rem; border-radius: 100px;
+  font-weight: 700; font-size: 0.85rem;
+  text-decoration: none; white-space: nowrap;
+  margin-left: auto;
+  transition: background 0.2s;
+}
+.nav-mobile-register:hover { background: var(--saffron-dim); }
 @media (max-width: 940px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .mobile-menu.open { display: flex; }
+  .nav-mobile-register { display: inline-block; }
 }
 
 /* ─── HERO ─── */
@@ -802,6 +814,48 @@ section { padding: 6rem 0; }
   .wa-btn { padding: 0.55rem 0.5rem; font-size: 0.8rem; }
 }
 
+/* ─── QUIZ SUBMIT BANNER ─── */
+.quiz-banner {
+  background: linear-gradient(135deg, #1A0A00, #2E1500);
+  padding: 1rem 2rem;
+  border-bottom: 3px solid var(--saffron);
+}
+.quiz-banner-inner {
+  max-width: 1120px; margin: 0 auto;
+  display: flex; flex-direction: column; gap: 0.9rem;
+}
+.quiz-label {
+  font-size: 1.25rem; font-weight: 500; color: #fff;
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+}
+.quiz-label span { color: var(--saffron); font-size: 2rem; font-weight: 1000; font-family: 'Cormorant Garamond', serif; }
+.quiz-buttons {
+  display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-start;
+}
+.quiz-btn-pair {
+  display: flex; gap: 0.75rem; flex-shrink: 0;
+}
+.quiz-btn {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: var(--saffron); color: #fff;
+  padding: 1.1rem 1.6rem; border-radius: var(--radius-sm);
+  text-decoration: none; font-weight: 700; font-size: 1.3rem;
+  line-height: 1.3; text-align: center; white-space: nowrap;
+  transition: background 0.2s, transform 0.15s;
+  border: 1.5px solid rgba(255,255,255,0.15);
+}
+.quiz-btn:hover { background: var(--saffron-dim); transform: translateY(-2px); }
+.quiz-btn .qb-lang { font-size: 1.45rem; font-weight: 800; }
+.quiz-btn .qb-group { font-size: 0.95rem; font-weight: 500; opacity: 0.85; letter-spacing: 0.04em; text-transform: uppercase; margin-top: 0.2rem; }
+.quiz-btn.hindi { background: #1a6e2e; border-color: rgba(255,255,255,0.12); }
+.quiz-btn.hindi:hover { background: #155a24; }
+.quiz-btn.telugu { background: #1a4e8a; border-color: rgba(255,255,255,0.12); }
+.quiz-btn.telugu:hover { background: #153f70; }
+@media (max-width: 700px) {
+  .quiz-banner { padding: 0.85rem 1rem; }
+}
+
 /* ─── SCROLL TO TOP ─── */
 #scrollTopBtn {
   position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
@@ -888,6 +942,7 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
       <li><a href="#volunteer">Volunteer</a></li>
       <li><a href="https://registration-fl7.pages.dev" target="_blank" class="nav-cta">Register →</a></li>
     </ul>
+    <a href="https://registration-fl7.pages.dev" target="_blank" class="nav-mobile-register">Register →</a>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
     </button>
@@ -903,6 +958,40 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
     <a href="https://registration-fl7.pages.dev" target="_blank" class="m-cta">Register →</a>
   </div>
 </nav>
+<!-- QUIZ SUBMIT BANNER -->
+<div class="quiz-banner">
+  <div class="quiz-banner-inner">
+    <div class="quiz-label"><span>Submit Quiz</span></div>
+    <div class="quiz-label">choose your language & group:</div>
+    <div class="quiz-buttons">
+      <div class="quiz-btn-pair">
+        <a href="https://forms.gle/UimER5uhqrs1wd2Y8" target="_blank" rel="noopener" class="quiz-btn">
+          <span class="qb-lang">English</span>
+          <span class="qb-group">Junior (8–16)</span>
+        </a>
+        <a href="https://forms.gle/pKbmmmZ9YwDf1eb57" target="_blank" rel="noopener" class="quiz-btn">
+          <span class="qb-lang">English</span>
+          <span class="qb-group">Senior (17+)</span>
+        </a>
+      </div>
+      <div class="quiz-btn-pair">
+        <a href="https://forms.gle/BeiRUAE2c9Xyw6jq5" target="_blank" rel="noopener" class="quiz-btn telugu">
+          <span class="qb-lang">Telugu</span>
+          <span class="qb-group">Junior (8–16)</span>
+        </a>
+        <a href="https://forms.gle/zgR3bt6bKb1HMxid9" target="_blank" rel="noopener" class="quiz-btn telugu">
+          <span class="qb-lang">Telugu</span>
+          <span class="qb-group">Senior (17+)</span>
+        </a>
+      </div>
+      <a href="https://forms.gle/4Wv5oXcr3GQMeJWE7" target="_blank" rel="noopener" class="quiz-btn hindi">
+        <span class="qb-lang">Hindi</span>
+        <span class="qb-group">Senior (17+)</span>
+      </a>
+    </div>
+  </div>
+</div>
+
 <!-- whatsapp banner
 <div class="wa-banner">
   <div class="wa-banner-inner">
