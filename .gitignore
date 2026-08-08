@@ -1,0 +1,12 @@
+# Raw form exports and merged results contain participant names, phone
+# numbers and scores (including minors in the Junior group). These must
+# never be committed to this repo. They are deployed to Cloudflare
+# directly from the local machine via `wrangler deploy`, independent of git.
+cloudflare-worker/data/raw/*.csv
+cloudflare-worker/data/results.json
+cloudflare-worker/.wrangler/
+node_modules/
+
+# Generated certificates (contain participant names)
+certificates/
+AlexBrush-Regular.ttf
