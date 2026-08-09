@@ -814,7 +814,7 @@ section { padding: 6rem 0; }
   .wa-btn { padding: 0.55rem 0.5rem; font-size: 0.8rem; }
 }
 
-/* ─── QUIZ SUBMIT BANNER ─── */
+/* ─── RESULTS BANNER ─── */
 .quiz-banner {
   background: linear-gradient(135deg, #1A0A00, #2E1500);
   padding: 1rem 2rem;
@@ -824,36 +824,30 @@ section { padding: 6rem 0; }
   max-width: 1120px; margin: 0 auto;
   display: flex; flex-direction: column; gap: 0.9rem;
 }
-.quiz-label {
-  font-size: 1.05rem; font-weight: 500; color: #fff;
-  letter-spacing: 0.02em;
-  line-height: 0.9;
+.results-banner-inner {
+  flex-direction: row; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem 1.5rem;
 }
-.quiz-label span { color: var(--saffron); font-size: 2rem; font-weight: 1000; font-family: 'Cormorant Garamond', serif; }
-.quiz-buttons {
-  display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-start;
+.results-banner-text { display: flex; flex-direction: column; gap: 0.25rem; }
+.results-banner-title {
+  color: var(--saffron); font-size: 2rem; font-weight: 1000;
+  font-family: 'Cormorant Garamond', serif; line-height: 1;
 }
-.quiz-btn-pair {
-  display: flex; gap: 0.75rem; flex-shrink: 0;
+.results-banner-sub {
+  color: #fff; font-size: 1.05rem; font-weight: 500; letter-spacing: 0.02em;
 }
-.quiz-btn {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  background: var(--saffron); color: #fff;
-  padding: 1.1rem 1.6rem; border-radius: var(--radius-sm);
-  text-decoration: none; font-weight: 700; font-size: 1.3rem;
-  line-height: 1.3; text-align: center; white-space: nowrap;
-  transition: background 0.2s, transform 0.15s;
+.results-banner-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--saffron); color: #fff; text-decoration: none;
+  padding: 0.85rem 1.8rem; border-radius: 100px;
+  font-weight: 700; font-size: 1.05rem; white-space: nowrap;
   border: 1.5px solid rgba(255,255,255,0.15);
+  transition: background 0.2s, transform 0.15s;
 }
-.quiz-btn:hover { background: var(--saffron-dim); transform: translateY(-2px); }
-.quiz-btn .qb-lang { font-size: 1.45rem; font-weight: 800; }
-.quiz-btn .qb-group { font-size: 0.95rem; font-weight: 500; opacity: 0.85; letter-spacing: 0.04em; text-transform: uppercase; margin-top: 0.2rem; }
-.quiz-btn.hindi { background: #1a6e2e; border-color: rgba(255,255,255,0.12); }
-.quiz-btn.hindi:hover { background: #155a24; }
-.quiz-btn.telugu { background: #1a4e8a; border-color: rgba(255,255,255,0.12); }
-.quiz-btn.telugu:hover { background: #153f70; }
+.results-banner-btn:hover { background: var(--saffron-dim); transform: translateY(-2px); }
 @media (max-width: 700px) {
   .quiz-banner { padding: 0.85rem 1rem; }
+  .results-banner-btn { width: 100%; }
 }
 
 /* ─── SCROLL TO TOP ─── */
@@ -958,38 +952,14 @@ footer p { font-size: 0.83rem; color: var(--footer-muted); line-height: 1.7; }
     <a href="https://registration-fl7.pages.dev" target="_blank" class="m-cta">Register →</a>
   </div>
 </nav>
-<!-- QUIZ SUBMIT BANNER -->
+<!-- RESULTS BANNER -->
 <div class="quiz-banner">
-  <div class="quiz-banner-inner">
-    <div class="quiz-label"><span>Submit Quiz</span></div>
-    <div class="quiz-label">Submit your answers before 5th August, 10PM</div>
-    <div class="quiz-label">Choose your language & group:</div>
-    <div class="quiz-buttons">
-      <div class="quiz-btn-pair">
-        <a href="https://forms.gle/UimER5uhqrs1wd2Y8" target="_blank" rel="noopener" class="quiz-btn">
-          <span class="qb-lang">English</span>
-          <span class="qb-group">Junior (8–16)</span>
-        </a>
-        <a href="https://forms.gle/pKbmmmZ9YwDf1eb57" target="_blank" rel="noopener" class="quiz-btn">
-          <span class="qb-lang">English</span>
-          <span class="qb-group">Senior (17+)</span>
-        </a>
-      </div>
-      <div class="quiz-btn-pair">
-        <a href="https://forms.gle/BeiRUAE2c9Xyw6jq5" target="_blank" rel="noopener" class="quiz-btn telugu">
-          <span class="qb-lang">Telugu</span>
-          <span class="qb-group">Junior (8–16)</span>
-        </a>
-        <a href="https://forms.gle/zgR3bt6bKb1HMxid9" target="_blank" rel="noopener" class="quiz-btn telugu">
-          <span class="qb-lang">Telugu</span>
-          <span class="qb-group">Senior (17+)</span>
-        </a>
-      </div>
-      <a href="https://forms.gle/4Wv5oXcr3GQMeJWE7" target="_blank" rel="noopener" class="quiz-btn hindi">
-        <span class="qb-lang">Hindi</span>
-        <span class="qb-group">Senior (17+)</span>
-      </a>
+  <div class="quiz-banner-inner results-banner-inner">
+    <div class="results-banner-text">
+      <span class="results-banner-title">Results are Out!</span>
+      <span class="results-banner-sub">Check the results and download your eCertificate</span>
     </div>
+    <a href="results.html" class="results-banner-btn">Check Results →</a>
   </div>
 </div>
 
