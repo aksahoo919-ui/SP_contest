@@ -275,22 +275,15 @@ function escapeAttr(str) {
 }
 
 // ── Certificate generation ────────────────────────────────────────────────
-// Template: images/Srestha_Cert.png  (2000 × 1414 px)
-// Name drawn in Alex Brush (maroon), description in Inter below the divider.
+// Template: images/Srestha Certificate.png  — all wording is baked into the
+// image; the only thing drawn on top is the participant's name (Alex Brush),
+// centred in the blank line between "THIS IS TO CERTIFY THAT" and the divider.
 
-const CERT_W    = 2000;
-const CERT_H    = 1414;
-const CREAM_CX  = 1155;   // horizontal centre of the cream area
-const NAME_CY   = 635;    // vertical centre for the name
-const MAX_NAME_W = 1500;  // auto-shrink if name is wider than this
-const BODY_Y    = 862;    // top of first description line
-const LINE_GAP  = 72;
-
-const DESCRIPTION = [
-  'has successfully participated in the Śreṣṭha Contest 2026',
-  'a reading and knowledge initiative by ISKCON Abids, Hyderabad,',
-  'and has demonstrated commendable understanding and dedication.',
-];
+const NAME_CX_FRAC = 0.615;  // horizontal centre of the certificate's text area
+const NAME_CY_FRAC = 0.475;  // vertical centre of the blank name line
+const NAME_MAX_FRAC = 0.60;  // name may occupy up to 60% of the image width
+const NAME_SIZE_FRAC = 0.11; // starting font size relative to image height
+const NAME_COLOR = '#1E2E6E'; // deep navy, matching the template
 
 function loadImage(src) {
   return new Promise(function (resolve, reject) {
@@ -307,38 +300,31 @@ async function generateCertificate(entry) {
 
   try {
     await document.fonts.load('160px "Alex Brush"');
-    await document.fonts.load('400 46px "Inter"');
 
-    const tmpl   = await loadImage('images/Srestha_Cert.png');
+    const tmpl   = await loadImage('images/Srestha Certificate.png');
+    const W = tmpl.naturalWidth;
+    const H = tmpl.naturalHeight;
+
     const canvas = document.createElement('canvas');
-    canvas.width  = CERT_W;
-    canvas.height = CERT_H;
+    canvas.width  = W;
+    canvas.height = H;
     const ctx = canvas.getContext('2d');
 
-    ctx.drawImage(tmpl, 0, 0, CERT_W, CERT_H);
+    ctx.drawImage(tmpl, 0, 0, W, H);
 
     ctx.textAlign    = 'center';
     ctx.textBaseline = 'middle';
 
-    // Name — Alex Brush, auto-scale down for long names
-    let fontSize = 160;
+    // Name — Alex Brush, auto-shrink if it would overflow the line
+    const maxWidth = W * NAME_MAX_FRAC;
+    let fontSize = Math.round(H * NAME_SIZE_FRAC);
     ctx.font = fontSize + 'px "Alex Brush"';
-    while (ctx.measureText(entry.name || '').width > MAX_NAME_W && fontSize > 60) {
-      fontSize -= 5;
+    while (ctx.measureText(entry.name || '').width > maxWidth && fontSize > 40) {
+      fontSize -= 4;
       ctx.font = fontSize + 'px "Alex Brush"';
     }
-    ctx.fillStyle = '#74131F';
-    ctx.fillText(entry.name || 'Participant', CREAM_CX, NAME_CY);
-
-    // Description — Inter regular, top-aligned lines
-    ctx.textBaseline = 'top';
-    ctx.font         = '400 46px "Inter"';
-    ctx.fillStyle    = '#321E14';
-    let y = BODY_Y;
-    DESCRIPTION.forEach(function (line) {
-      ctx.fillText(line, CREAM_CX, y);
-      y += LINE_GAP;
-    });
+    ctx.fillStyle = NAME_COLOR;
+    ctx.fillText(entry.name || 'Participant', W * NAME_CX_FRAC, H * NAME_CY_FRAC);
 
     // Download as PNG
     canvas.toBlob(function (blob) {
