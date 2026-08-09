@@ -231,7 +231,7 @@ form.addEventListener('submit', async function (e) {
       return;
     }
 
-    const results = data.results || [];
+    const results = dedupeByName(data.results || []);
     if (results.length === 0) {
       statusMsg.textContent = 'No submissions found for this phone number.';
       return;
@@ -246,6 +246,27 @@ form.addEventListener('submit', async function (e) {
     searchBtn.disabled = false;
   }
 });
+
+// Pull the leading numeric value out of a score like "85%", "17/20" or "42".
+// Unscored/blank entries sort below any scored entry.
+function scoreValue(entry) {
+  const m = String(entry && entry.score != null ? entry.score : '').match(/-?\d+(\.\d+)?/);
+  return m ? parseFloat(m[0]) : -Infinity;
+}
+
+// Collapse duplicate submissions: for each participant name (case-insensitive)
+// under the same phone number, keep only their highest-scoring entry.
+function dedupeByName(entries) {
+  const best = new Map();
+  entries.forEach(function (entry) {
+    const key = String(entry.name || '').trim().toLowerCase();
+    const existing = best.get(key);
+    if (!existing || scoreValue(entry) > scoreValue(existing)) {
+      best.set(key, entry);
+    }
+  });
+  return Array.from(best.values());
+}
 
 function renderResultCard(entry, idx) {
   const card = document.createElement('div');
@@ -280,7 +301,7 @@ function escapeAttr(str) {
 // centred in the blank line between "THIS IS TO CERTIFY THAT" and the divider.
 
 const NAME_CX_FRAC = 0.615;  // horizontal centre of the certificate's text area
-const NAME_CY_FRAC = 0.505;  // vertical centre of the blank name line
+const NAME_CY_FRAC = 0.515;  // vertical centre of the blank name line
 const NAME_MAX_FRAC = 0.60;  // name may occupy up to 60% of the image width
 const NAME_SIZE_FRAC = 0.11; // starting font size relative to image height
 const NAME_COLOR = '#1E2E6E'; // deep navy, matching the template
