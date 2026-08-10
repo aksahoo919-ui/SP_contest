@@ -268,6 +268,18 @@ function dedupeByName(entries) {
   return Array.from(best.values());
 }
 
+// Cap display score: 99 or 100 → shown as 98
+function displayScore(score) {
+  if (score == null) return '—';
+  const s = String(score);
+  const m = s.match(/^(\d+)(%?)$/);
+  if (m) {
+    const n = parseInt(m[1], 10);
+    if (n >= 99) return '98' + m[2];
+  }
+  return s;
+}
+
 function renderResultCard(entry, idx) {
   const card = document.createElement('div');
   card.className = 'result-card';
@@ -275,7 +287,7 @@ function renderResultCard(entry, idx) {
     '<div class="result-info">' +
       '<span class="form-label">' + escapeHtml(entry.form || '') + '</span>' +
       '<h3>' + escapeHtml(entry.name || 'Participant') + '</h3>' +
-      '<p>Score: <span class="score">' + escapeHtml(String(entry.score != null ? entry.score : '—')) + '</span></p>' +
+      '<p>Score: <span class="score">' + escapeHtml(displayScore(entry.score)) + '</span></p>' +
     '</div>' +
     '<button class="btn-download" data-name="' + escapeAttr(entry.name || '') + '">Download Certificate</button>';
 
