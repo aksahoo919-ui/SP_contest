@@ -308,7 +308,7 @@ function escapeAttr(str) {
 }
 
 // ── Certificate generation ────────────────────────────────────────────────
-// Template: images/Srestha Certificate.png  — all wording is baked into the
+// Template: images/Srestha_Certificate_1.png  — all wording is baked into the
 // image; the only thing drawn on top is the participant's name (Alex Brush),
 // centred in the blank line between "THIS IS TO CERTIFY THAT" and the divider.
 
@@ -341,7 +341,7 @@ async function generateCertificate(entry) {
   try {
     await document.fonts.load('160px "Alex Brush"');
 
-    const tmpl   = await loadImage('images/Srestha Certificate.png');
+    const tmpl   = await loadImage('images/Srestha_Certificate_1.png');
     const W = tmpl.naturalWidth;
     const H = tmpl.naturalHeight;
 
