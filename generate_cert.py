@@ -32,7 +32,7 @@ BODY_COLOR = (50, 30, 20)
 
 DESCRIPTION = [
     "has successfully participated in the \u015are\u1e63\u1e6dha Contest 2026",
-    "a reading and knowledge initiative by ISKCON Abids, Hyderabad,",
+    "a reading and knowledge initiative by ISKCON,",
     "and has demonstrated commendable understanding and dedication.",
 ]
 
