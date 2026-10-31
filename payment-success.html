@@ -3,183 +3,141 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Payment Successful — ŚREṢṬHA Contest 2026</title>
+<title>Payment Successful — Value Education Contest 2027</title>
 <link rel="icon" type="image/png" href="images/logo.png">
+<script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+/* ── Design tokens (shared with index.html) ── */
+:root {
+  --ivory: #FAF6EE; --ivory-deep: #F2EADB; --paper: #FFFFFF;
+  --ink: #241A12; --ink-soft: #5C4B3B; --ink-faint: #8A7865; --on-dark: #F3EBDD; --on-dark-soft: #B7A893;
+  --saffron: #E0611A; --saffron-deep: #B84D0F; --saffron-tint: rgba(224,97,26,0.08);
+  --gold: #A68A4E; --gold-soft: #C9B27E; --wa: #178C47; --wa-deep: #11733A; --wa-tint: rgba(23,140,71,0.08);
+  --error: #B03A2E;
+  --rule: rgba(36,26,18,0.14); --rule-strong: rgba(36,26,18,0.28);
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --fs-xs: 0.72rem; --fs-sm: 0.86rem; --fs-lg: 1.12rem;
+  --max: 1200px; --gutter: clamp(1.25rem, 4vw, 2.5rem); --radius: 2px; --nav-h: 72px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --text-muted: var(--ink-soft);
+}
+
+/* ── Base ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; }
+body { font-family: var(--font-body); line-height: 1.65; color: var(--ink); background: var(--ivory); min-height: 100vh; display: flex; flex-direction: column; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+:focus-visible { outline: 2px solid var(--saffron); outline-offset: 3px; }
+.icon { width: 1.25rem; height: 1.25rem; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.eyebrow { display: inline-flex; align-items: center; gap: 0.75rem; font-size: var(--fs-xs); font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--saffron-deep); margin-bottom: 1.25rem; }
+.eyebrow::before { content: ''; width: 2rem; height: 1px; background: currentColor; }
 
-:root {
-  --saffron:     #F06A1B;
-  --saffron-dim: #C45510;
-  --gold:        #D4A843;
-  --radius:      14px;
-  --radius-sm:   8px;
+/* ── Buttons ── */
+.btn-primary, .btn-outline, .btn-download {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+  padding: 0.95rem 1.5rem; border: 1px solid transparent; border-radius: var(--radius);
+  font-family: var(--font-body); font-size: 0.76rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase;
+  text-decoration: none; white-space: nowrap; cursor: pointer; transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
-:root {
-  --bg:          #FDFAF4;
-  --text:        #1A1208;
-  --text-muted:  #6B5340;
-  --border:      rgba(180,130,60,0.18);
-  --card-bg:     #FFFFFF;
-  --footer-bg:   #1A1208;
-  --footer-text: #F0E8D8;
-  --footer-muted:#9A8A72;
-  --saffron-glow:rgba(240,106,27,0.10);
-  --gold-light:  rgba(212,168,67,0.10);
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg:         #0E0A05;
-    --text:       #F0E8D8;
-    --text-muted: #9A8A72;
-    --border:     rgba(212,168,67,0.15);
-    --card-bg:    #231A0D;
-    --saffron-glow:rgba(240,106,27,0.18);
-    --gold-light:  rgba(212,168,67,0.12);
-  }
-}
+.btn-primary { background: var(--saffron-deep); color: #fff; }
+.btn-primary:hover { background: #9C410C; }
+.btn-primary:disabled, .btn-download:disabled { opacity: 0.55; cursor: not-allowed; }
+.btn-outline, .btn-download { background: transparent; color: var(--ink); border-color: var(--rule-strong); }
+.btn-outline:hover, .btn-download:hover { border-color: var(--ink); }
 
-html { scroll-behavior: smooth; font-size: calc(16px + 2pt); }
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--bg); color: var(--text);
-  line-height: 1.7; min-height: 100vh;
-  display: flex; flex-direction: column;
-}
+/* ── Nav ── */
+nav { background: rgba(250,246,238,0.94); border-bottom: 1px solid var(--rule); }
+.nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.nav-logo { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; color: var(--ink); }
+.nav-logo img { width: 46px; height: 46px; object-fit: contain; }
+.nav-logo-text { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; line-height: 1; white-space: nowrap; }
+.nav-home { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.8rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; }
+.nav-home:hover { color: var(--ink); }
+.nav-home .icon { width: 1rem; height: 1rem; }
 
-/* NAV */
-nav {
-  background: var(--bg); border-bottom: 1px solid var(--border);
-  padding: 0 2rem;
-}
-.nav-inner {
-  max-width: 1120px; margin: 0 auto;
-  display: flex; align-items: center; height: 66px; gap: 12px;
-  text-decoration: none;
-}
-.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.nav-logo img { width: 38px; height: 38px; object-fit: contain; border-radius: 6px; }
-.nav-logo-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem; font-weight: 600; color: var(--text);
-}
+/* ── Footer ── */
+footer { background: #15100C; color: var(--on-dark-soft); }
+.footer-inner { max-width: var(--max); margin: 0 auto; padding: 2rem var(--gutter); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 2rem; }
+footer p { font-size: 0.8rem; }
+.footer-hk { color: var(--gold-soft); }
 
-/* MAIN */
-main {
-  flex: 1; display: flex; align-items: center; justify-content: center;
-  padding: 3rem 1.5rem;
-}
-.confirmation-card {
-  background: var(--card-bg); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 3rem 2.5rem;
-  max-width: 520px; width: 100%; text-align: center;
-}
+/* ── Motion ── */
+.js [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out); transition-delay: calc(var(--i, 0) * 90ms); }
+.js .loaded [data-reveal] { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .js [data-reveal] { opacity: 1; transform: none; transition: none; } }
 
-.check-circle {
-  width: 72px; height: 72px; border-radius: 50%;
-  background: rgba(34,197,94,0.12); border: 2px solid rgba(34,197,94,0.35);
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 1.75rem;
-  font-size: 2rem;
-}
+/* ── Confirmation ── */
+main { flex: 1; width: 100%; max-width: var(--max); margin: 0 auto; padding: clamp(3rem, 7vw, 5.5rem) var(--gutter) clamp(4rem, 8vw, 6rem); }
+.confirmation-card { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 2.5rem clamp(2rem, 6vw, 5rem); align-items: start; }
+.check-circle { width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.75rem; border: 1px solid var(--wa); color: var(--wa); background: var(--wa-tint); }
+.check-circle .icon { width: 1.6rem; height: 1.6rem; stroke-width: 1.75; }
+.confirmation-card .subtitle { margin-top: 1.25rem; font-size: var(--fs-lg); color: var(--ink-soft); max-width: 30em; }
+.actions { margin-top: 2.25rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.actions .icon { width: 1rem; height: 1rem; }
+.next-steps { border-top: 1px solid var(--rule-strong); padding-top: 1.5rem; }
+.next-steps h2 { margin-bottom: 0.5rem; font-size: var(--fs-xs); font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+.step-item { display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
+.step-num { font-family: var(--font-display); font-size: 2.2rem; font-weight: 500; line-height: 1; color: var(--gold-soft); font-variant-numeric: lining-nums; }
+.step-item p { font-size: 0.95rem; color: var(--ink-soft); line-height: 1.6; }
+.step-item p strong { color: var(--ink); }
+@media (max-width: 800px) { .confirmation-card { grid-template-columns: 1fr; } }
 
-.confirmation-card h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 600;
-  color: var(--text); line-height: 1.2; margin-bottom: 0.75rem;
+/* ── Display headings (shared with index.html): condensed caps, shimmer accents ── */
+.page-title { font-family: 'Antonio', 'Oswald', 'Arial Narrow', Impact, sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.02; color: #2C1A12; font-size: clamp(3rem, 7.4vw, 5.8rem); }
+.shimmer, .shimmer-split .w > span {
+  background: linear-gradient(120deg, #D47A00 0%, #FF7200 35%, #FFD700 50%, #FF7200 65%, #D47A00 100%);
+  background-size: 200% auto; -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: var(--saffron);
+  filter: drop-shadow(0 2px 8px rgba(255,114,0,0.18));
+  animation: shimmer 4s linear infinite;
 }
-.confirmation-card .subtitle {
-  font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.65;
+.shimmer-split { background: none; filter: none; animation: none; -webkit-text-fill-color: currentColor; }
+@keyframes shimmer { from { background-position: 0% center; } to { background-position: 200% center; } }
+.split .w { display: inline-block; overflow: hidden; white-space: nowrap; vertical-align: top; padding: 0.1em 0.04em 0.12em; margin: -0.1em -0.04em -0.12em; }
+.split .w > span { display: inline-block; }
+.js .split .w > span { transform: translateY(120%); transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1); transition-delay: calc(var(--i, 0) * 25ms); }
+.js .split.is-in .w > span { transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .js .split .w > span { transform: none; transition: none; }
+  .shimmer, .shimmer-split .w > span { animation: none; }
 }
-
-.info-box {
-  background: var(--saffron-glow); border: 1px solid rgba(240,106,27,0.2);
-  border-radius: var(--radius-sm); padding: 1.25rem 1.5rem;
-  text-align: left; margin-bottom: 2rem;
-}
-.info-box p {
-  font-size: 0.875rem; color: var(--text-muted); line-height: 1.65;
-}
-.info-box strong { color: var(--text); }
-
-.divider { height: 1px; background: var(--border); margin: 1.75rem 0; }
-
-.next-steps { text-align: left; margin-bottom: 2rem; }
-.next-steps h2 {
-  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem;
-}
-.step-item {
-  display: flex; gap: 0.85rem; align-items: flex-start;
-  margin-bottom: 0.85rem;
-}
-.step-num {
-  width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0;
-  background: var(--gold-light); border: 1px solid rgba(212,168,67,0.3);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.7rem; font-weight: 700; color: var(--gold);
-}
-.step-item p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.55; }
-.step-item p strong { color: var(--text); }
-
-.actions { display: flex; flex-direction: column; gap: 0.75rem; }
-.btn-primary {
-  display: inline-flex; align-items: center; justify-content: center;
-  background: var(--saffron); color: #fff;
-  padding: 0.8rem 1.5rem; border-radius: 100px;
-  font-weight: 700; font-size: 0.88rem;
-  text-decoration: none; transition: background 0.2s, transform 0.15s;
-}
-.btn-primary:hover { background: var(--saffron-dim); transform: translateY(-2px); }
-.btn-outline {
-  display: inline-flex; align-items: center; justify-content: center;
-  background: transparent; color: var(--text);
-  padding: 0.8rem 1.5rem; border-radius: 100px;
-  font-weight: 500; font-size: 0.88rem;
-  text-decoration: none; border: 1px solid var(--border);
-  transition: border-color 0.2s, background 0.2s;
-}
-.btn-outline:hover { border-color: var(--saffron); background: var(--saffron-glow); }
-
-/* FOOTER */
-footer {
-  background: var(--footer-bg); border-top: 1px solid rgba(212,168,67,0.15);
-  padding: 2rem; text-align: center;
-}
-footer p { font-size: 0.78rem; color: var(--footer-muted); }
-.footer-hk { font-style: italic; color: var(--gold); margin-bottom: 0.25rem; }
 </style>
 </head>
 <body>
 
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5"/><path d="m11 18-6-6 6-6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+</svg>
+
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <picture>
-        <source srcset="images/logo_white.png" media="(prefers-color-scheme: dark)" />
-        <img src="images/logo_black.png" alt="ŚREṢṬHA Contest" width="78" height="78" onerror="this.style.display='none'" />
-      </picture>
-      <span class="nav-logo-text">ŚREṢṬHA Contest</span>
+      <img src="images/logo_black.png" alt="Value Education Contest" width="78" height="78" onerror="this.style.display='none'" />
+      <span class="nav-logo-text">Value Education Contest</span>
     </a>
+    <a href="index.html" class="nav-home"><svg class="icon"><use href="#i-arrow-left"/></svg>Home</a>
   </div>
 </nav>
 
 <main>
   <div class="confirmation-card">
+    <div>
+      <div class="check-circle"><svg class="icon"><use href="#i-check"/></svg></div>
+      <h1 class="page-title">Payment <span class="shimmer">Successful!</span></h1>
+      <p class="subtitle" data-reveal>
+        Thank you for ordering your booklet. Your payment has been received.
+      </p>
+      <div class="actions" data-reveal style="--i:1">
+        <a href="index.html" class="btn-outline"><svg class="icon"><use href="#i-arrow-left"/></svg>Back to Home</a>
+      </div>
+    </div>
 
-    <div class="check-circle">✓</div>
-
-    <h1>Payment Successful!</h1>
-    <p class="subtitle">
-      Thank you for ordering your booklet. Your payment has been received.
-    </p>
-
-    
-
-    <div class="next-steps">
+    <div class="next-steps" data-reveal style="--i:2">
       <h2>What's next</h2>
       <div class="step-item">
         <div class="step-num">1</div>
@@ -191,24 +149,64 @@ footer p { font-size: 0.78rem; color: var(--footer-muted); }
       </div>
       <div class="step-item">
         <div class="step-num">3</div>
-        <p><strong>Answer Submission</strong> — Submit your answers in between <strong>26-30 July, 2026</strong>.</p>
+        <p><strong>Answer Submission</strong> — Submit your answers in between <strong>16-21 January, 2027</strong>.</p>
       </div>
     </div>
-
-    <div class="divider"></div>
-
-    <div class="actions">
-      
-      <a href="index.html" class="btn-outline">Back to Home</a>
-    </div>
-
   </div>
 </main>
 
 <footer>
-  <p class="footer-hk">Hare Krishna 🙏</p>
-  <p>An initiative by ISKCON Abids, Hyderabad &nbsp;·&nbsp; © 2026 Srestha Contest</p>
+  <div class="footer-inner">
+    <p class="footer-hk">Hare Krishna 🙏</p>
+    <p>An initiative by ISKCON Abids, Hyderabad &nbsp;·&nbsp; © 2026-27 Value Education Contest</p>
+  </div>
 </footer>
 
+<script>
+// Fade the page content up once it has loaded
+function showMain() { document.querySelector('main').classList.add('loaded'); }
+requestAnimationFrame(showMain);
+setTimeout(showMain, 150);
+</script>
+<script>
+// Page title: plain words rise letter by letter, shimmer words rise whole
+(function () {
+  document.querySelectorAll('.page-title').forEach(function (el) {
+    var i = 0;
+    el.setAttribute('aria-label', el.innerHTML.replace(/<br\s*\/?>/gi, ' ').replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim());
+    (function walk(node, whole) {
+      Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+        if (n.nodeType === 3) {
+          var frag = document.createDocumentFragment();
+          n.textContent.split(/(\s+)/).forEach(function (part) {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
+            var w = document.createElement('span');
+            w.className = 'w';
+            w.setAttribute('aria-hidden', 'true');
+            (whole ? [part] : Array.from(part)).forEach(function (piece) {
+              var c = document.createElement('span');
+              c.textContent = piece;
+              c.style.setProperty('--i', i);
+              i += whole ? 3 : 1;
+              w.appendChild(c);
+            });
+            frag.appendChild(w);
+          });
+          n.parentNode.replaceChild(frag, n);
+        } else if (n.nodeType === 1 && n.tagName !== 'BR') {
+          var isShimmer = n.classList.contains('shimmer');
+          if (isShimmer) n.classList.add('shimmer-split');
+          walk(n, whole || isShimmer);
+        }
+      });
+    })(el, false);
+    el.classList.add('split');
+    function show() { el.classList.add('is-in'); }
+    requestAnimationFrame(function () { requestAnimationFrame(show); });
+    setTimeout(show, 200);
+  });
+})();
+</script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Certificate generator for SRESTHA Contest 2026.
+Certificate generator for Value Education Contest 2027.
 
 Usage:
   Single:  python generate_cert.py "Student Name"
