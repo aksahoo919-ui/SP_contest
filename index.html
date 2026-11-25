@@ -1295,7 +1295,7 @@ footer { background: #15100C; color: var(--on-dark-soft); }
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">How do I join the WhatsApp group? <svg class="icon arr"><use href="#i-chevron"/></svg></button>
-        <div class="faq-a">Click <a href="#join-whatsapp">Join WhatsApp Group</a>, select your area, class group and language, and you will be taken to your group.</div>
+        <div class="faq-a">Click <a href="#join-whatsapp">Join WhatsApp Group</a>, select your area and language, and you will be taken to your group.</div>
       </div>
       <div class="faq-section-label">Solving &amp; Submitting Answers</div>
       <div class="faq-item">
@@ -1364,12 +1364,10 @@ footer { background: #15100C; color: var(--on-dark-soft); }
 <dialog class="wa-dialog" id="waDialog" aria-labelledby="waTitle">
   <button type="button" class="wa-close" aria-label="Close" onclick="this.closest('dialog').close()"><svg class="icon"><use href="#i-close"/></svg></button>
   <h2 id="waTitle">Join WhatsApp Group</h2>
-  <p class="wa-lead">Choose your area, class group and language to join the right group.</p>
+  <p class="wa-lead">Choose your area and language to join the right group.</p>
   <form id="waForm">
     <label for="waArea">Area</label>
     <select id="waArea" required><option value="">Select area</option></select>
-    <label for="waGroup">Class / Age Group</label>
-    <select id="waGroup" required disabled><option value="">Select class group</option></select>
     <label for="waLang">Language</label>
     <select id="waLang" required disabled><option value="">Select language</option></select>
     <button type="submit" class="btn btn-wa wa-submit" disabled>Open WhatsApp Group <svg class="icon"><use href="#i-arrow"/></svg></button>
@@ -1470,10 +1468,9 @@ document.querySelectorAll('.video-item').forEach(el => {
   });
 });
 
-// WhatsApp group picker — rows of whatsapp-groups.csv: Area, Class/Age Group, Language, WhatsApp Link
+// WhatsApp group picker — rows of whatsapp-groups.csv: Area, Language, WhatsApp Link
 const waDialog = document.getElementById('waDialog');
 const waArea = document.getElementById('waArea');
-const waGroup = document.getElementById('waGroup');
 const waLang = document.getElementById('waLang');
 const waSubmit = document.querySelector('#waForm .wa-submit');
 const waMsg = document.getElementById('waMsg');
@@ -1507,7 +1504,6 @@ const uniq = arr => [...new Set(arr)];
 
 function waMatches() {
   return waRows.filter(r => (!waArea.value || r.area === waArea.value) &&
-                            (!waGroup.value || r.group === waGroup.value) &&
                             (!waLang.value || r.lang === waLang.value));
 }
 
@@ -1518,8 +1514,8 @@ async function loadWaGroups() {
     const res = await fetch('whatsapp-groups.csv', { cache: 'no-cache' });
     if (!res.ok) throw new Error(res.status);
     waRows = parseCsv(await res.text()).slice(1)
-      .filter(r => r.length >= 4 && r[3])
-      .map(([area, group, lang, link]) => ({ area, group, lang, link }));
+      .filter(r => r.length >= 3 && r[2])
+      .map(([area, lang, link]) => ({ area, lang, link }));
     fillSelect(waArea, uniq(waRows.map(r => r.area)), 'Select area');
     waMsg.textContent = '';
   } catch (e) {
@@ -1528,20 +1524,16 @@ async function loadWaGroups() {
 }
 
 waArea.addEventListener('change', () => {
-  fillSelect(waGroup, waArea.value ? uniq(waMatches().map(r => r.group)) : [], 'Select class group');
-  fillSelect(waLang, [], 'Select language');
-  waSubmit.disabled = true;
-});
-waGroup.addEventListener('change', () => {
+  // Clear the old pick first, or it would filter the new area's options
   waLang.value = '';
-  fillSelect(waLang, waGroup.value ? uniq(waMatches().map(r => r.lang)) : [], 'Select language');
+  fillSelect(waLang, waArea.value ? uniq(waMatches().map(r => r.lang)) : [], 'Select language');
   waSubmit.disabled = true;
 });
 waLang.addEventListener('change', () => { waSubmit.disabled = !waLang.value; });
 
 document.getElementById('waForm').addEventListener('submit', e => {
   e.preventDefault();
-  const row = waArea.value && waGroup.value && waLang.value && waMatches()[0];
+  const row = waArea.value && waLang.value && waMatches()[0];
   if (!row) { waMsg.textContent = 'No WhatsApp group found for this selection.'; return; }
   window.open(row.link, '_blank', 'noopener');
   waDialog.close();
